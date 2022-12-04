@@ -4,22 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="Codigo ordenado en packages y con la funcion getNames hecha">
+    <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="packages para hacer cada parte del codigo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d7042e8c-5960-436a-bebc-65a07344a52e" />
+        <option name="url" value="https://github.com/ismaelrg1/Tap1OFicial.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2ISUuaWTdXglN2X6P3frBF3exQC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -60,7 +84,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670174706128</updated>
-      <workItem from="1670174707252" duration="2852000" />
+      <workItem from="1670174707252" duration="3562000" />
     </task>
     <task id="LOCAL-00001" summary="Codigo ordenado en packages y con la funcion getNames hecha">
       <created>1670176816339</created>
@@ -69,7 +93,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670176816339</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="packages para hacer cada parte del codigo">
+      <created>1670177742927</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670177742927</updated>
+    </task>
+    <task id="LOCAL-00003" summary="packages para hacer cada parte del codigo">
+      <created>1670177854174</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670177854174</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -88,7 +126,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Codigo ordenado en packages y con la funcion getNames hecha" />
-    <option name="LAST_COMMIT_MESSAGE" value="Codigo ordenado en packages y con la funcion getNames hecha" />
+    <MESSAGE value="packages para hacer cada parte del codigo" />
+    <option name="LAST_COMMIT_MESSAGE" value="packages para hacer cada parte del codigo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
