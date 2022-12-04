@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="" />
+    <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="Codigo ordenado en packages y con la funcion getNames hecha">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +34,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -57,8 +60,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670174706128</updated>
-      <workItem from="1670174707252" duration="1945000" />
+      <workItem from="1670174707252" duration="2852000" />
     </task>
+    <task id="LOCAL-00001" summary="Codigo ordenado en packages y con la funcion getNames hecha">
+      <created>1670176816339</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670176816339</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,6 +85,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Codigo ordenado en packages y con la funcion getNames hecha" />
+    <option name="LAST_COMMIT_MESSAGE" value="Codigo ordenado en packages y con la funcion getNames hecha" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
