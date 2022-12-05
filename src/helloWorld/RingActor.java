@@ -1,5 +1,7 @@
 package helloWorld;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import actor.*;
 
@@ -19,7 +21,6 @@ public class RingActor implements Runnable, ActorInterface {
     public void send(MessageInterface msg){
         ActorInterface aux = msg.getActor();    // take the recipient actor of the msg
         aux.getMsgQueue().add(msg);             // Send the msg to this Actor
-
     }
 
     @Override
@@ -43,6 +44,11 @@ public class RingActor implements Runnable, ActorInterface {
 
     public LinkedBlockingQueue<MessageInterface> getMsgQueue() {
         return msgQueue;
+    }
+
+    @Override
+    public LinkedList<MessageInterface> getQueue() {
+        return null;
     }
 
 

@@ -2,6 +2,9 @@
 import actor.ActorContext;
 import helloWorld.*;
 import actor.*;
+import proxy.*;
+
+import java.util.NoSuchElementException;
 
 
 public class App {
@@ -22,7 +25,7 @@ public class App {
         t2.send(new Message(hello, "Hello world (t2)"));
 
         ActorProxy t3 = ActorContext.spawnActor("t3", new RingActor());
-        t3.send(new Message(t1, "Hello world (t3->t1)"));
+        t3.send(new Message(t3, "Hello world (t3->t3)"));
 
         //Thread.sleep(5000);
         //actor.ActorContext.getInstance().quitAll();
@@ -30,6 +33,51 @@ public class App {
 
         //Devuelve nombres Actores en Actor.actor.ActorContext
         System.out.println(ActorContext.getInstance().getNames());
+
+
+        /////////////////////////////////////////////////////////////////////
+
+        ActorProxy2 insult = ActorContext.spawnActor2("hola",new InsultActor());
+        insult.send(new GetInsultMessage(insult));
+        Thread.sleep(5000);
+        Message result = (Message) insult.recieve();
+        System.out.println(result.getMsg());
+
+
+        insult.send(new GetAllInsultsMessage(insult));
+        Thread.sleep(7000);
+        //Procesando todos los insultos
+
+        try {
+            while (true) {
+                result = (Message) insult.recieve();
+                System.out.print(result.getMsg()+" ");
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("Todo bien");
+        }
+
+        insult.send(new AddInsultMessage(insult, "nerd"));
+        Thread.sleep(1000);
+
+        insult.send(new GetAllInsultsMessage(insult));
+        Thread.sleep(7000);
+        //Procesando todos los insultos
+
+        try {
+            while (true) {
+                result = (Message) insult.recieve();
+                System.out.print(result.getMsg()+" ");
+            }
+        }catch (NoSuchElementException e){
+            System.out.println("Todo bien");
+        }
+
+
+
+        actor.ActorContext.getInstance().quitAll();
+
+
        
     }
 }
