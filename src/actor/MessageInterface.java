@@ -6,8 +6,9 @@ public interface MessageInterface{
     
     public String getMsg();
 
-    public ActorInterface getActor();
+    public void setMsg(String msg);
 
+    public ActorInterface getActor();
 
 
 }

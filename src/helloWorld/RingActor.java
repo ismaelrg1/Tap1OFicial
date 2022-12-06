@@ -23,23 +23,31 @@ public class RingActor implements Runnable, ActorInterface {
         aux.getMsgQueue().add(msg);             // Send the msg to this Actor
     }
 
+    private void process() throws InternalError{
+        try {
+            // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
+            MessageInterface msg = msgQueue.take();
+            if (msg instanceof QuitMessage)
+                throw new InternalError();
+            System.out.println(msg.getMsg());
+
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+
+
     @Override
     public void run() {
-        while(true){
-            try {
-                // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
-                MessageInterface msg = msgQueue.take();
-                if (msg instanceof QuitMessage)
-                    break;
-                System.out.println(msg.getMsg());
-                
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+        try {
+            while (true) {
+                process();
+                System.out.println("He procesado");
             }
-            
+        }catch (InternalError e) {
+            System.out.println("He muerto");
         }
-        System.out.println("He muerto");
     }
 
     public LinkedBlockingQueue<MessageInterface> getMsgQueue() {

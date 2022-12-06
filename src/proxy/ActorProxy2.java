@@ -1,7 +1,6 @@
 package proxy;
 
 import actor.*;
-import helloWorld.Message;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -38,7 +37,7 @@ public class ActorProxy2 implements ActorInterface {
     @Override
     public void run() {}
 
-    public MessageInterface recieve() throws NoSuchElementException {
+    public MessageInterface receive() throws NoSuchElementException {
         return this.queue.pop();
     }
 

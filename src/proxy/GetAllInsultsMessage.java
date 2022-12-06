@@ -14,6 +14,11 @@ public class GetAllInsultsMessage implements MessageInterface {
     }
 
     @Override
+    public void setMsg(String msg) {
+
+    }
+
+    @Override
     public ActorInterface getActor() {
         return this.actor;
     }

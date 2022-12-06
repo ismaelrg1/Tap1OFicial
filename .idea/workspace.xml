@@ -5,19 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="packages para hacer cada parte del codigo">
-      <change afterPath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actor/ActorContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actor/ActorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actor/MessageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/MessageInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helloWorld/QuitMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/QuitMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helloWorld/RingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/RingActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/proxy/AddInsultMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/AddInsultMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/proxy/GetAllInsultsMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/GetAllInsultsMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/proxy/GetInsultMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/GetInsultMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +95,8 @@
       <option name="presentableId" value="Default" />
       <updated>1670174706128</updated>
       <workItem from="1670174707252" duration="3562000" />
-      <workItem from="1670253841208" duration="11682000" />
+      <workItem from="1670253841208" duration="11891000" />
+      <workItem from="1670349643703" duration="5026000" />
     </task>
     <task id="LOCAL-00001" summary="Codigo ordenado en packages y con la funcion getNames hecha">
       <created>1670176816339</created>
@@ -145,7 +146,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/proxy/InsultActor.java</url>
-          <line>32</line>
+          <line>31</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

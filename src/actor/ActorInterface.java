@@ -12,5 +12,6 @@ public interface ActorInterface extends Runnable {
 
     public LinkedList<MessageInterface> getQueue();
 
+    private void process() {}
 
 }

@@ -17,6 +17,11 @@ public class AddInsultMessage implements MessageInterface {
     }
 
     @Override
+    public void setMsg(String msg) {
+
+    }
+
+    @Override
     public ActorInterface getActor() {
         return this.actor;
     }

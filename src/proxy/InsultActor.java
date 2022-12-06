@@ -4,7 +4,6 @@ import helloWorld.*;
 import actor.*;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -43,38 +42,47 @@ public class InsultActor implements ActorInterface {
         return null;
     }
 
-    @Override
-    public void run() {
-        while(true){
-
-            //TODO: Crear la funcion Process(Para todos los actores ActorInterface) y Poner todo esto dentro de la funcion
-            try {
-                // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
-                MessageInterface msg = msgQueue.take();
-                if (msg instanceof QuitMessage)
-                    break;
-                else if(msg instanceof AddInsultMessage){
-                    insultQueue.add(new Message(null, msg.getMsg()));
+    private void process() throws InternalError{
+        try {
+            // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
+            MessageInterface msg = msgQueue.take();
+            if (msg instanceof QuitMessage)
+                throw new InternalError();
+            else if(msg instanceof AddInsultMessage){
+                insultQueue.add(new Message(null, msg.getMsg()));
+            }
+            else if(msg instanceof GetInsultMessage) {
+                Random rand = new Random();
+                msg.getActor().getQueue().add(this.insultQueue.get(rand.nextInt(insultQueue.size())));
+            }
+            else if(msg instanceof GetAllInsultsMessage){
+                for( int i = 0; i < insultQueue.size(); i++){
+                    msg.getActor().getQueue().add(this.insultQueue.get(i));
                 }
-                else if(msg instanceof GetInsultMessage) {
-                    Random rand = new Random();
-                    msg.getActor().getQueue().add(this.insultQueue.get(rand.nextInt(insultQueue.size())));
-                }
-                else if(msg instanceof GetAllInsultsMessage){
-                    for( int i = 0; i < insultQueue.size(); i++){
-                        msg.getActor().getQueue().add(this.insultQueue.get(i));
-                    }
-                }
-                else {
-                    System.out.println(msg.getMsg());
-                }
-
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+            }
+            else {
+                System.out.println(msg.getMsg());
             }
 
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         }
-        System.out.println("He muerto");
     }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                process();
+            }
+        }catch (InternalError e){
+            System.out.println("He muerto");
+        }
+    }
+
+
+
+
+
 }

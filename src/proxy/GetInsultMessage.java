@@ -11,9 +11,10 @@ public class GetInsultMessage implements MessageInterface {
     }
 
     @Override
-    public String getMsg() {
-        return null;
-    }
+    public String getMsg() { return null;}
+
+    @Override
+    public void setMsg(String msg) {}
 
     @Override
     public ActorInterface getActor() {

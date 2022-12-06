@@ -1,8 +1,8 @@
 
-import actor.ActorContext;
 import helloWorld.*;
 import actor.*;
 import proxy.*;
+import decorator.*;
 
 import java.util.NoSuchElementException;
 
@@ -40,7 +40,7 @@ public class App {
         ActorProxy2 insult = ActorContext.spawnActor2("hola",new InsultActor());
         insult.send(new GetInsultMessage(insult));
         Thread.sleep(5000);
-        Message result = (Message) insult.recieve();
+        Message result = (Message) insult.receive();
         System.out.println(result.getMsg());
 
 
@@ -50,7 +50,7 @@ public class App {
 
         try {
             while (true) {
-                result = (Message) insult.recieve();
+                result = (Message) insult.receive();
                 System.out.print(result.getMsg()+" ");
             }
         }catch (NoSuchElementException e){
@@ -66,13 +66,19 @@ public class App {
 
         try {
             while (true) {
-                result = (Message) insult.recieve();
+                result = (Message) insult.receive();
                 System.out.print(result.getMsg()+" ");
             }
         }catch (NoSuchElementException e){
             System.out.println("Todo bien");
         }
 
+    //////////////////////////////////////////////////////////////
+
+        ActorProxy pepe = ActorContext.spawnActor("name",new EncryptionDecorator(new RingActor()));
+
+        pepe.send(new Message(hello,"ABCD"));
+        Thread.sleep(2000);
 
 
         actor.ActorContext.getInstance().quitAll();
