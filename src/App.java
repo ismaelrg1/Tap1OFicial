@@ -75,9 +75,10 @@ public class App {
 
     //////////////////////////////////////////////////////////////
 
-        ActorProxy pepe = ActorContext.spawnActor("name",new EncryptionDecorator(new RingActor()));
+        ActorProxy pepe = ActorContext.spawnActor("pepe",new EncryptionDecorator(new RingActor()));
+        ActorProxy manoli = ActorContext.spawnActor("manoli",new EncryptionDecorator(new RingActor()));
 
-        pepe.send(new Message(hello,"ABCD"));
+        pepe.send(new Message(manoli,"ABCD"));
         Thread.sleep(2000);
 
 

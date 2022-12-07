@@ -1,6 +1,7 @@
 package decorator;
 
 import actor.MessageInterface;
+import helloWorld.QuitMessage;
 import helloWorld.RingActor;
 
 public class EncryptionDecorator extends RingActor {
@@ -32,5 +33,28 @@ public class EncryptionDecorator extends RingActor {
         }
 
         msg.setMsg(encrypted);
+    }
+
+    private void desencrypt(MessageInterface msg){
+        String original = msg.getMsg();
+
+        if (original == null){
+            original="";
+        }
+
+        String encrypted = "";
+        for (int i = 0; i < original.length(); i++){
+            int letterAscii = (int)original.charAt(i);
+            encrypted = encrypted + (char)(letterAscii-1);
+        }
+
+        msg.setMsg(encrypted);
+    }
+
+    @Override
+    public void process(MessageInterface msg){
+        this.desencrypt(msg);
+        super.process(msg);
+
     }
 }

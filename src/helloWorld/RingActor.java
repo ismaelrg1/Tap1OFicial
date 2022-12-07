@@ -23,18 +23,12 @@ public class RingActor implements Runnable, ActorInterface {
         aux.getMsgQueue().add(msg);             // Send the msg to this Actor
     }
 
-    private void process() throws InternalError{
-        try {
+    public void process(MessageInterface msg) throws InternalError{
             // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
-            MessageInterface msg = msgQueue.take();
-            if (msg instanceof QuitMessage)
-                throw new InternalError();
-            System.out.println(msg.getMsg());
+        if (msg instanceof QuitMessage)
+            throw new InternalError();
+        System.out.println(msg.getMsg());
 
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
     }
 
 
@@ -42,10 +36,11 @@ public class RingActor implements Runnable, ActorInterface {
     public void run() {
         try {
             while (true) {
-                process();
+                MessageInterface msg = msgQueue.take();
+                process(msg);
                 System.out.println("He procesado");
             }
-        }catch (InternalError e) {
+        }catch (InternalError | InterruptedException e) {
             System.out.println("He muerto");
         }
     }
