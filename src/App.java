@@ -79,12 +79,16 @@ public class App {
         ActorProxy manoli = ActorContext.spawnActor("manoli",new EncryptionDecorator(new RingActor()));
 
         pepe.send(new Message(manoli,"ABCD"));
+        pepe.send(new Message(hello,"ABCD"));
         Thread.sleep(2000);
+
+
+
 
 
         actor.ActorContext.getInstance().quitAll();
 
 
-       
+
     }
 }
