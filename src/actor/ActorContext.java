@@ -1,7 +1,7 @@
 package actor;
 
-import helloWorld.ActorProxy;
-import helloWorld.QuitMessage;
+import helloWorld.*;
+import proxy.*;
 
 import java.util.*;
 
@@ -20,6 +20,12 @@ public class ActorContext extends Thread {
         registry.put(name, a);
         new Thread(a).start();
         return new ActorProxy(a);
+    }
+
+    public static ActorProxy2 spawnActor2(String name, ActorInterface a){
+        registry.put(name, a);
+        new Thread(a).start();
+        return new ActorProxy2(a);
     }
 
     // Kill all the threads/actors: Iterate the HashMap and send a quitMessage to all the Actors

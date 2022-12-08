@@ -1,6 +1,7 @@
 package helloWorld;
 import actor.*;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -19,14 +20,17 @@ public class ActorProxy implements ActorInterface {
 
 
     @Override
-    public void run() {
-        
-    }
+    public void run() {}
 
 
     @Override
     public LinkedBlockingQueue<MessageInterface> getMsgQueue() {
         return actor.getMsgQueue();
+    }
+
+    @Override
+    public LinkedList<MessageInterface> getQueue() {
+        return null;
     }
 
 

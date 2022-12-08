@@ -13,6 +13,9 @@ public class QuitMessage implements MessageInterface {
     }
 
     @Override
+    public void setMsg(String msg) { }
+
+    @Override
     public ActorInterface getActor() {
         return actor;
     }

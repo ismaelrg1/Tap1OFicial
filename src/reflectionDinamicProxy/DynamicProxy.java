@@ -2,6 +2,11 @@ package reflectionDinamicProxy;
 
 import actor.*;
 
+<<<<<<< HEAD
+=======
+import java.util.LinkedList;
+import java.util.List;
+>>>>>>> Ismael
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class DynamicProxy implements ActorInterface {
@@ -16,6 +21,14 @@ public class DynamicProxy implements ActorInterface {
     }
 
     @Override
+<<<<<<< HEAD
+=======
+    public LinkedList<MessageInterface> getQueue() {
+        return null;
+    }
+
+    @Override
+>>>>>>> Ismael
     public void run() {
 
     }

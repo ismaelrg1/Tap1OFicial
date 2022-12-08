@@ -6,16 +6,44 @@
   <component name="ChangeListManager">
     <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="packages para hacer cada parte del codigo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actor/ActorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorInterface.java" afterDir="false" />
+>>>>>>> Ismael
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="d7042e8c-5960-436a-bebc-65a07344a52e" />
+        <option name="url" value="https://github.com/ismaelrg1/Tap1OFicial.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/util/HashMap.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,6 +56,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -40,6 +69,21 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/ismae/Downloads/Tap1OFicial-main/Tap1OFicial-main/TAPOf/TAPOf",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.spelling",
+    "vue.rearranger.settings.migration": "true"
+>>>>>>> Ismael
   }
 }</component>
   <component name="RunManager">
@@ -56,7 +100,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="false" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="" />
@@ -64,7 +108,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670174706128</updated>
-      <workItem from="1670174707252" duration="2852000" />
+      <workItem from="1670174707252" duration="3562000" />
+      <workItem from="1670253841208" duration="11891000" />
+      <workItem from="1670349643703" duration="5333000" />
+      <workItem from="1670413414269" duration="43000" />
+      <workItem from="1670439451680" duration="1252000" />
+      <workItem from="1670511696136" duration="4349000" />
     </task>
     <task id="LOCAL-00001" summary="Codigo ordenado en packages y con la funcion getNames hecha">
       <created>1670176816339</created>
@@ -73,7 +122,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670176816339</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="packages para hacer cada parte del codigo">
+      <created>1670177742927</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670177742927</updated>
+    </task>
+    <task id="LOCAL-00003" summary="packages para hacer cada parte del codigo">
+      <created>1670177854174</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670177854174</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,17 +155,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Codigo ordenado en packages y con la funcion getNames hecha" />
-    <option name="LAST_COMMIT_MESSAGE" value="Codigo ordenado en packages y con la funcion getNames hecha" />
+    <MESSAGE value="packages para hacer cada parte del codigo" />
+    <option name="LAST_COMMIT_MESSAGE" value="packages para hacer cada parte del codigo" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/App.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
