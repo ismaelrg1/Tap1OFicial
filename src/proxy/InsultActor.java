@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class InsultActor implements ActorInterface {
+public class InsultActor implements ActorInterface, Runnable {
 
     private LinkedList<MessageInterface> insultQueue;
     private LinkedBlockingQueue<MessageInterface> msgQueue;
@@ -17,8 +17,8 @@ public class InsultActor implements ActorInterface {
         insultQueue = new LinkedList<MessageInterface>();
         msgQueue = new LinkedBlockingQueue<MessageInterface>();
 
-        for (int i = 0; i < insults.length; i++) {
-            insultQueue.add(new Message(null, insults[i]));
+        for(String s:insults){
+            insultQueue.add(new Message(null, s));
         }
 
 
@@ -28,8 +28,9 @@ public class InsultActor implements ActorInterface {
 
     @Override
     public void send(MessageInterface msg) {
-        ActorInterface aux = msg.getActor();    // take the recipient actor of the msg
-        aux.getMsgQueue().add(msg);             // Send the msg to this Actor
+        msgQueue.add(msg);
+        //ActorInterface aux = msg.getActor();    // take the recipient actor of the msg
+        //aux.getMsgQueue().add(msg);             // Send the msg to this Actor
     }
 
     @Override
@@ -56,9 +57,7 @@ public class InsultActor implements ActorInterface {
                 msg.getActor().getQueue().add(this.insultQueue.get(rand.nextInt(insultQueue.size())));
             }
             else if(msg instanceof GetAllInsultsMessage){
-                for( int i = 0; i < insultQueue.size(); i++){
-                    msg.getActor().getQueue().add(this.insultQueue.get(i));
-                }
+                insultQueue.forEach((m)->msg.getActor().getQueue().add(m));
             }
             else {
                 System.out.println(msg.getMsg());

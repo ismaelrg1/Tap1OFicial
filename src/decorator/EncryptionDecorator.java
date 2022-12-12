@@ -5,17 +5,17 @@ import helloWorld.QuitMessage;
 import helloWorld.RingActor;
 
 public class EncryptionDecorator extends RingActor {
+    private RingActor actor;      // actor that will be decorated
 
-    private RingActor actor;
-
-    public EncryptionDecorator(RingActor actor){
+    public EncryptionDecorator(RingActor a){
         super();
-        this.actor=actor;
+        actor=a;
     }
 
     @Override
     public void send(MessageInterface msg) {
-        this.encrypt(msg);
+        encrypt(msg);
+        System.out.println("SEstoy en el decorador");
         super.send(msg);
     }
 
@@ -31,6 +31,8 @@ public class EncryptionDecorator extends RingActor {
              int letterAscii = (int)original.charAt(i);
              encrypted = encrypted + (char)(letterAscii+1);
         }
+        System.out.println("encriptando...");
+
 
         msg.setMsg(encrypted);
     }
@@ -47,14 +49,17 @@ public class EncryptionDecorator extends RingActor {
             int letterAscii = (int)original.charAt(i);
             encrypted = encrypted + (char)(letterAscii-1);
         }
-
+        System.out.println("desecniptando");
         msg.setMsg(encrypted);
     }
 
     @Override
     public void process(MessageInterface msg){
-        this.desencrypt(msg);
+        desencrypt(msg);
+        System.out.println("PEstoy en el decorador");
         super.process(msg);
 
     }
+
+
 }

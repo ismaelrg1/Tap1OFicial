@@ -38,6 +38,11 @@ public class ActorProxy2 implements ActorInterface {
     public void run() {}
 
     public MessageInterface receive() throws NoSuchElementException {
+        //runnable
+        // while(msg==null){
+        //         ir leyendo queue
+        // }
+        // Decidir si se queda el insulto o se lo manda a su Actor con el atributo ActorInterface
         return this.queue.pop();
     }
 

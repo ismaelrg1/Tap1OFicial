@@ -18,13 +18,15 @@ public class ActorContext extends Thread {
 
     public static ActorProxy spawnActor(String name, ActorInterface a){
         registry.put(name, a);
-        new Thread(a).start();
+        Thread hilo = new Thread(a);
+        hilo.start();
         return new ActorProxy(a);
     }
 
     public static ActorProxy2 spawnActor2(String name, ActorInterface a){
         registry.put(name, a);
-        new Thread(a).start();
+        Thread hilo = new Thread(a);
+        hilo.start();
         return new ActorProxy2(a);
     }
 
