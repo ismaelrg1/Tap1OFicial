@@ -4,6 +4,7 @@ import actor.*;
 import proxy.*;
 import decorator.*;
 
+import java.util.function.Predicate;
 import java.util.NoSuchElementException;
 
 
@@ -34,10 +35,10 @@ public class App {
         //Devuelve nombres Actores en Actor.actor.ActorContext
         System.out.println(ActorContext.getInstance().getNames());
 
-
+        */
         //////////////////////////////////////////////////////////////////////////////
 
-        ActorProxy2 insult = ActorContext.spawnActor2("hola",new InsultActor());
+      /*  ActorProxy2 insult = ActorContext.spawnActor2("hola",new InsultActor());
         // en getInsultMsg() dentro del () tendremos el from, que es quien pide al destiantario que le mande un
         // insulto. EL destinatario cogera uno aleatorio y se lo mandará a la cola del from para que lo pueda leer
         insult.send(new GetInsultMessage(insult));
@@ -77,14 +78,39 @@ public class App {
 
     //////////////////////////////////////////////////////////////
 
-        ActorProxy pepe = ActorContext.spawnActor("pepe",new EncryptionDecorator(new RingActor()));
+        /*ActorProxy pepe = ActorContext.spawnActor("pepe",new EncryptionDecorator(new RingActor()));
         ActorProxy manoli = ActorContext.spawnActor("manoli",new EncryptionDecorator(new RingActor()));
 
         pepe.send(new Message(pepe,"ABCD"));
         //pepe.send(new Message(hello,"ABCD"));
 
+    */
 
+    ////////////////////////////////////////////////////////////////
+        /*ActorProxy evilCompilator = new ActorProxy(new RingActor());
+        ActorProxy superman = ActorContext.spawnActor("superman", new RingActor());
+        ActorProxy police = ActorContext.spawnActor("police", new FireWallDecorator(new RingActor()));
 
-        //actor.ActorContext.getInstance().quitAll();
+        police.send(new Message(evilCompilator, "virus"));
+        police.send(new Message(superman, "Super"));
+
+        //actor.ActorContext.getInstance().quitAll();*/
+
+    ////////////////////////////////////////////////////////////////
+        ActorProxy filter = ActorContext.spawnActor("filter", new LambdaFirewallDecorator(new RingActor()));
+        ActorProxy reciver = ActorContext.spawnActor("reciver", new LambdaFirewallDecorator(new RingActor()));
+
+        reciver.send(new Message(filter,"Mario"));          //Se muestra Mario SI
+
+        reciver.send(new AddClosureMessage((String p) -> p.startsWith("p",3)));
+
+        reciver.send(new Message(filter,"campo"));             //no se muestra el msg NO
+
+        reciver.send(new AddClosureMessage((String p) -> p.startsWith("f")));
+        reciver.send(new Message(filter,"fallo"));                          //NO
+        reciver.send(new Message(filter,"prueba No funciona"));             //NO
+        reciver.send(new Message(filter,"Mario"));                          //SI
+
+    /////////////////////////////////////////////////////////////////////////////////////////
     }
 }

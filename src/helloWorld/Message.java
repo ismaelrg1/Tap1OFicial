@@ -25,7 +25,7 @@ public class Message implements MessageInterface {
         this.actor = actor;
     }
 
-
+    public String toString(){return msg;}
     
 
 

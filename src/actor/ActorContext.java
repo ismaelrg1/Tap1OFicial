@@ -17,10 +17,11 @@ public class ActorContext extends Thread {
     }
 
     public static ActorProxy spawnActor(String name, ActorInterface a){
-        registry.put(name, a);
+        ActorProxy proxy = new ActorProxy(a);
+        registry.put(name, proxy);
         Thread hilo = new Thread(a);
         hilo.start();
-        return new ActorProxy(a);
+        return proxy;
     }
 
     public static ActorProxy2 spawnActor2(String name, ActorInterface a){
@@ -35,9 +36,16 @@ public class ActorContext extends Thread {
         registry.forEach((k,v)->v.send(new QuitMessage(v)));
         registry.clear();
    }
-    // public lookup()
+    public ActorInterface lookup(String s){
+        //return registry.get(s) instanceof ActorInterface;
+        return registry.get(s);
+    }
 
     public String getNames(){
         return registry.keySet().toString();
+    }
+
+    public HashMap<String, ActorInterface>  getRegistry(){
+        return registry;
     }
 }

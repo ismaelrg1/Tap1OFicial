@@ -5,25 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="packages para hacer cada parte del codigo">
+      <change afterPath="$PROJECT_DIR$/src/decorator/AddClosureMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/decorator/LambdaFirewallDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TAPOf/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TAPOf/actor/ActorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/actor/ActorContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/decorator/EncryptionDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/decorator/EncryptionDecorator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/proxy/ActorProxy2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/proxy/ActorProxy2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/decorator/FireWallDecorator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/decorator/FireWallDecorator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/Message.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TAPOf/proxy/InsultActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/proxy/InsultActor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actor/ActorContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloWorld/RingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/RingActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helloWorld/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
     </list>
-    <list id="04b27428-8d99-4a15-9e42-ee5312605345" name="Changes by mario" comment="">
+    <list id="8327dc59-507f-436c-8eb8-96b00f659d75" name="Changes by deim" comment="">
+      <change beforePath="$PROJECT_DIR$/src/actor/ActorContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
+    </list>
+    <list id="7797f039-ea6b-4b77-8b7f-022a15093261" name="Changes by ismae" comment="">
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
     </list>
+    <list id="04b27428-8d99-4a15-9e42-ee5312605345" name="Changes by mario" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -52,39 +55,33 @@
       </UrlAndAccount>
     </option>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/lang/Runnable.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/util/HashMap.java" root0="SKIP_INSPECTION" />
-  </component>
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/proxy/InsultActor.java">
+    <file path="$PROJECT_DIR$/src/actor/ActorContext.java">
       <ranges>
-        <range start1="9" end1="10" start2="9" end2="10" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
-        <range start1="19" end1="21" start2="19" end2="21" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="30" end1="32" start2="30" end2="33" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="58" end1="61" start2="59" end2="60" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
+        <range start1="19" end1="20" start2="19" end2="21" changelist="8327dc59-507f-436c-8eb8-96b00f659d75" />
+        <range start1="22" end1="23" start2="23" end2="24" changelist="8327dc59-507f-436c-8eb8-96b00f659d75" />
+        <range start1="37" end1="38" start2="38" end2="42" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="42" end1="42" start2="46" end2="50" changelist="8327dc59-507f-436c-8eb8-96b00f659d75" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java">
+    <file path="$PROJECT_DIR$/src/decorator/FireWallDecorator.java">
       <ranges>
-        <range start1="7" end1="7" start2="7" end2="8" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="8" end1="11" start2="9" end2="10" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="12" end1="13" start2="11" end2="12" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="17" end1="18" start2="16" end2="18" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="33" end1="33" start2="33" end2="35" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="49" end1="50" start2="51" end2="52" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="55" end1="56" start2="57" end2="59" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
-        <range start1="59" end1="59" start2="62" end2="64" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="5" end1="5" start2="5" end2="6" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="7" end1="7" start2="8" end2="9" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="11" end1="12" start2="13" end2="14" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="20" end1="21" start2="22" end2="33" changelist="8327dc59-507f-436c-8eb8-96b00f659d75" />
+        <range start1="33" end1="37" start2="45" end2="45" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
       </ranges>
     </file>
     <file path="$PROJECT_DIR$/src/App.java">
       <ranges>
-        <range start1="11" end1="12" start2="11" end2="12" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="37" end1="38" start2="37" end2="38" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
-        <range start1="40" end1="40" start2="40" end2="42" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="73" end1="74" start2="75" end2="76" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="80" end1="84" start2="82" end2="84" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
-        <range start1="87" end1="92" start2="87" end2="88" changelist="04b27428-8d99-4a15-9e42-ee5312605345" />
+        <range start1="6" end1="6" start2="6" end2="7" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
+        <range start1="36" end1="37" start2="37" end2="38" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="39" end1="40" start2="40" end2="41" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="79" end1="80" start2="80" end2="81" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="85" end1="85" start2="86" end2="97" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="86" end1="86" start2="98" end2="101" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="87" end1="88" start2="102" end2="114" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
       </ranges>
     </file>
   </component>
@@ -146,6 +143,10 @@
       <workItem from="1670511696136" duration="4349000" />
       <workItem from="1670608948185" duration="5113000" />
       <workItem from="1670852739809" duration="2949000" />
+      <workItem from="1670945199400" duration="3706000" />
+      <workItem from="1670949435807" duration="350000" />
+      <workItem from="1670950241514" duration="44000" />
+      <workItem from="1672141034074" duration="3418000" />
     </task>
     <task id="LOCAL-00001" summary="Codigo ordenado en packages y con la funcion getNames hecha">
       <created>1670176816339</created>

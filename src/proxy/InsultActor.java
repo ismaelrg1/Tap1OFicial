@@ -3,9 +3,11 @@ package proxy;
 import helloWorld.*;
 import actor.*;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Random;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.Collectors;
 
 public class InsultActor implements ActorInterface, Runnable {
 
@@ -57,7 +59,16 @@ public class InsultActor implements ActorInterface, Runnable {
                 msg.getActor().getQueue().add(this.insultQueue.get(rand.nextInt(insultQueue.size())));
             }
             else if(msg instanceof GetAllInsultsMessage){
-                insultQueue.forEach((m)->msg.getActor().getQueue().add(m));
+                // Option 1
+                /*String s = "";
+                for(MessageInterface m:insultQueue){
+                    s+=m.getMsg();
+                }
+                msg.getActor().getQueue().add(new Message(null,s));
+                // Option 2
+                //insultQueue.forEach((m)->msg.getActor().getQueue().add(m));*/
+                // Option 3
+                msg.getActor().getQueue().add(new Message(null,insultQueue.toString()));
             }
             else {
                 System.out.println(msg.getMsg());
