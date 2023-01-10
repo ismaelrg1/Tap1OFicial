@@ -37,15 +37,21 @@ public class ActorProxy2 implements ActorInterface {
     @Override
     public void run() {}
 
+    /**
+     *
+     * @return Get the Message received in the ActorProxy queue
+     * @throws NoSuchElementException
+     */
     public MessageInterface receive() throws NoSuchElementException {
         //runnable
-        // while(msg==null){
-        //         ir leyendo queue
-        // }
-        // Decidir si se queda el insulto o se lo manda a su Actor con el atributo ActorInterface
+        while(this.queue.isEmpty()){
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
         return this.queue.pop();
     }
-
-
 
 }

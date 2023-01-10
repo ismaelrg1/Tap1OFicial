@@ -12,6 +12,10 @@ public class AddClosureMessage implements MessageInterface {
         this.p=p;
     }
 
+    /**
+     * Get the predicate field of AddClousureMessage
+     * @return
+     */
     public Predicate<String> getP() {
         return p;
     }

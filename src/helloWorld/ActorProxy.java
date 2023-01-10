@@ -3,6 +3,7 @@ import actor.*;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class ActorProxy implements ActorInterface {
@@ -13,11 +14,10 @@ public class ActorProxy implements ActorInterface {
         this.actor=actor;
     }
 
+
     public void send (MessageInterface msg){
         actor.send(msg);
-        //TODO: submits this message to the queue of the Actor
     }
-
 
     @Override
     public void run() {}
@@ -33,5 +33,10 @@ public class ActorProxy implements ActorInterface {
         return null;
     }
 
+    public MessageInterface receive() throws NoSuchElementException {return null;}
 
+
+    public ActorInterface getActor(){
+        return this.actor;
+    }
 }

@@ -18,9 +18,14 @@ public class FireWallDecorator extends RingActor {
         this.actor = actor;
     }
 
+    /**
+     * Get the actor (sender) of the message and find if it is in the ActorContext's Registry
+     * If it is, sends the message.
+     * If it is not, discards the message
+     * @param msg
+     */
     @Override
     public void send(MessageInterface msg) {
-        //TODO: create an Actor filter from ActorContext
         Boolean good = false;
         Set<String> actors = ActorContext.getInstance().getRegistry().keySet();
         Iterator<String> i = actors.iterator();
@@ -30,13 +35,15 @@ public class FireWallDecorator extends RingActor {
         }
         if(good)
             super.send(msg);
-        System.out.printf("Eres bueno? "+good.toString());
+        //System.out.printf("Are you good? "+good.toString());
     }
+
 
     @Override
     public LinkedBlockingQueue<MessageInterface> getMsgQueue() {
         return null;
     }
+
 
     @Override
     public LinkedList<MessageInterface> getQueue() {

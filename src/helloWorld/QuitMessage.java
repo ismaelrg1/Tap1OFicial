@@ -3,7 +3,6 @@ import actor.*;
 
 public class QuitMessage implements MessageInterface {
     private ActorInterface actor;
-
     public QuitMessage(ActorInterface actor){
         this.actor=actor;
     }

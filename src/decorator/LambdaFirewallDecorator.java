@@ -10,15 +10,22 @@ public class LambdaFirewallDecorator extends RingActor {
     private RingActor actor;      // actor that will be decorated
     private LinkedList<Predicate<String>> filter;
 
+
     public LambdaFirewallDecorator(RingActor a){
         super();
         filter = new LinkedList<>();
         actor = a;
     }
-    /////
+
+    /**
+     * If the message is an instance of AddClosureMessage, it adds the Predicated to the LambdaFirewallDecorator
+     * Predicated list.
+     * If the message is not an instance of AddClosureMessage, it runs the message through all the Predicated List
+     * Closures. If the message passes the tests, it will be sent.
+     * @param msg
+     */
     @Override
     public void send(MessageInterface msg) {
-        //filter.forEach((p) -> this.send(new MessageInterface(p.test(msg.getMsg()).toString())));
         if(msg instanceof AddClosureMessage)
             filter.add(((AddClosureMessage) msg).getP());
         else {
@@ -27,7 +34,7 @@ public class LambdaFirewallDecorator extends RingActor {
             for (Predicate<String> p : filter) {
                 if (p.test(name)) {
                     closureTest = false;
-                    System.out.println("No he pasado la Clousure");
+                    System.out.println("I have not passed the Closure");
                     break;
                 }
             }
@@ -36,10 +43,5 @@ public class LambdaFirewallDecorator extends RingActor {
             }
         }
     }
-
-
-
-
-
 
 }

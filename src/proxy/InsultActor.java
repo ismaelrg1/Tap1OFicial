@@ -1,11 +1,11 @@
 package proxy;
 
+import dynamic.*;
 import helloWorld.*;
 import actor.*;
+import validation.PingPongMessage;
 
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.stream.Collectors;
 
@@ -22,10 +22,6 @@ public class InsultActor implements ActorInterface, Runnable {
         for(String s:insults){
             insultQueue.add(new Message(null, s));
         }
-
-
-
-
     }
 
     @Override
@@ -45,12 +41,21 @@ public class InsultActor implements ActorInterface, Runnable {
         return null;
     }
 
+    /**
+     * It processes the message according to the type of class it is.
+     * QuitMessage -> Eliminates the Actor Thread
+     * AddInsultMessage -> Adds a new InsultMessage to the ActorInsult insult list
+     * GetInsultMessage -> Return (send) a random insult of the ActorInsult insult list
+     * GetAllInsultsMessage -> Return a String with all the insults of the ActorInsult insult list
+     * PingPongMessage -> Sends "n" time a message to its mate
+     */
     private void process() throws InternalError{
         try {
             // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
             MessageInterface msg = msgQueue.take();
-            if (msg instanceof QuitMessage)
+            if (msg instanceof QuitMessage) {
                 throw new InternalError();
+            }
             else if(msg instanceof AddInsultMessage){
                 insultQueue.add(new Message(null, msg.getMsg()));
             }
@@ -69,16 +74,25 @@ public class InsultActor implements ActorInterface, Runnable {
                 //insultQueue.forEach((m)->msg.getActor().getQueue().add(m));*/
                 // Option 3
                 msg.getActor().getQueue().add(new Message(null,insultQueue.toString()));
-            }
-            else {
-                System.out.println(msg.getMsg());
+            } else if (msg instanceof PingPongMessage) {
+                int counter = Integer.parseInt(msg.getMsg());
+
+                if (counter--==0){
+                    return ;
+                }
+                //System.out.println("I'm in the Actor "+this+" and I'm the number "+counter);
+                msg.getActor().send(new PingPongMessage(this, counter));
+
+            } else {
+                //System.out.println(msg.getMsg());
             }
 
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
+
+    public MessageInterface receive() throws NoSuchElementException{return null;};
 
     @Override
     public void run() {
@@ -87,12 +101,8 @@ public class InsultActor implements ActorInterface, Runnable {
                 process();
             }
         }catch (InternalError e){
-            System.out.println("He muerto");
+            //System.out.println("I died");
         }
     }
-
-
-
-
 
 }
