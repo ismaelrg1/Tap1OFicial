@@ -35,7 +35,7 @@ public class FireWallDecorator extends RingActor {
         }
         if(good)
             super.send(msg);
-        //System.out.printf("Are you good? "+good.toString());
+        System.out.printf("Are you good? "+good.toString());
     }
 
 

@@ -54,4 +54,9 @@ public class ActorProxy2 implements ActorInterface {
         return this.queue.pop();
     }
 
+    @Override
+    public void setName(String s) {
+        actor.setName(s);
+    }
+
 }

@@ -71,6 +71,7 @@ public class EncryptionDecorator extends RingActor {
      */
     @Override
     public void process(MessageInterface msg){
+        System.out.println("Mensaje Encriptado: "+msg.getMsg());
         decrypt(msg);
         //System.out.println("I'm in the Decorator");
         super.process(msg);

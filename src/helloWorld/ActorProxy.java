@@ -8,6 +8,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class ActorProxy implements ActorInterface {
 
+
     private ActorInterface actor;
 
     public ActorProxy(ActorInterface actor){
@@ -34,6 +35,11 @@ public class ActorProxy implements ActorInterface {
     }
 
     public MessageInterface receive() throws NoSuchElementException {return null;}
+
+    @Override
+    public void setName(String s) {
+        actor.setName(s);
+    }
 
 
     public ActorInterface getActor(){

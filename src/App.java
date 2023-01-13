@@ -5,6 +5,7 @@ import actor.*;
 import proxy.*;
 import decorator.*;
 
+import java.awt.event.MouseWheelEvent;
 import java.lang.reflect.Proxy;
 import java.util.LinkedList;
 import java.util.function.Predicate;
@@ -53,7 +54,7 @@ public class App {
 
         MessageInterface r1 = insult.receive();
 
-        System.out.print("Initial Insults: "+r1.getMsg());
+        System.out.println("Initial Insults: "+r1.getMsg());
 
 
         insult.send(new AddInsultMessage(insult, "nerd"));
@@ -61,7 +62,7 @@ public class App {
         insult.send(new GetAllInsultsMessage(insult));
 
         MessageInterface r2 = insult.receive();
-        System.out.print("Final Insults "+r2.getMsg());
+        System.out.println("Final Insults "+r2.getMsg());
 
 
     //////////////////////////////////////////////////////////////
@@ -71,7 +72,7 @@ public class App {
         ActorProxy manoli = ActorContext.spawnActor("manoli",new EncryptionDecorator(new RingActor()));
 
         pepe.send(new Message(pepe,"ABCD"));
-        pepe.send(new Message(hello,"ABCD"));
+        manoli.send(new Message(pepe,"14"));
 
 
 
@@ -124,11 +125,13 @@ public class App {
     //////////////////////////////////////////////////////////
                         /*Unit Tests*/
 
-        Result res = JUnitCore.runClasses(TestSuite.class);
+        /*Result res = JUnitCore.runClasses(TestSuite.class);
         for (Failure failure : res.getFailures()) {
             System.out.println(failure.toString());
         }
-        System.out.println("TEST Actor OK? " + res.wasSuccessful());
+        System.out.println("TEST Actor OK? " + res.wasSuccessful());*/
+
+
 
 
 

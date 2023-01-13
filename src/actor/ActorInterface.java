@@ -31,5 +31,7 @@ public interface ActorInterface extends Runnable {
      */
     public MessageInterface receive() throws NoSuchElementException;
 
+    public void setName(String s);
+
 
 }

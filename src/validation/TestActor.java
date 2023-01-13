@@ -56,10 +56,18 @@ public class TestActor {
 
         ActorProxy ping = ActorContext.spawnActor("ping",new InsultActor());
         ActorProxy pong = ActorContext.spawnActor("pong",new InsultActor());
-
+        //System.out.println("actores: "+ActorContext.getInstance().getNames());
         int finalActors=ActorContext.getInstance().getNames().split(" ").length;
 
         ping.send(new PingPongMessage(pong,100));
+        ping.send(new QuitMessage(null));
+        pong.send(new QuitMessage(null));
+        /*try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("actores: "+ActorContext.getInstance().getNames());*/
 
         Assert.assertTrue(initialActors!=finalActors);
 

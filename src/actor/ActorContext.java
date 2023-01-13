@@ -29,6 +29,7 @@ public class ActorContext extends Thread {
      */
     public static ActorProxy spawnActor(String name, ActorInterface a){
         ActorProxy proxy = new ActorProxy(a);
+        a.setName(name);
         registry.put(name, proxy);
         Thread hilo = new Thread(a);
         hilo.start();

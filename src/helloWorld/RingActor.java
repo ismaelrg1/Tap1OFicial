@@ -12,10 +12,11 @@ import validation.*;
 
 public class RingActor implements Runnable, ActorInterface {
 
-
+    private String name;
     private LinkedBlockingQueue<MessageInterface> msgQueue;
    // private ActorListener listener;
     private ActorInterface next;
+
 
     public RingActor(){
        // listener = null;
@@ -68,7 +69,7 @@ public class RingActor implements Runnable, ActorInterface {
                 this.next.send(msg);
             }
         }
-        //System.out.println(msg.getMsg());
+        System.out.println("Mensaje: "+msg.getMsg());
     }
 
 
@@ -87,6 +88,7 @@ public class RingActor implements Runnable, ActorInterface {
             //notifyChange("f");
             //System.out.println("I died wrong");
         }
+        ActorContext.getInstance().getRegistry().remove(name);
     }
 
     public LinkedBlockingQueue<MessageInterface> getMsgQueue() {
@@ -104,6 +106,11 @@ public class RingActor implements Runnable, ActorInterface {
     }
 
     public MessageInterface receive() throws NoSuchElementException{return null;}
+
+    @Override
+    public void setName(String s) {
+        this.name=s;
+    }
 
  /*   public void notifyChange(String s){
         if(listener!=null) {

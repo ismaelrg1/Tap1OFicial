@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 
 public class InsultActor implements ActorInterface, Runnable {
 
+    private String name;
     private LinkedList<MessageInterface> insultQueue;
     private LinkedBlockingQueue<MessageInterface> msgQueue;
 
@@ -90,9 +91,17 @@ public class InsultActor implements ActorInterface, Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
     }
 
-    public MessageInterface receive() throws NoSuchElementException{return null;};
+    public MessageInterface receive() throws NoSuchElementException{return null;}
+
+    @Override
+    public void setName(String s) {
+        this.name=s;
+    }
+
+    ;
 
     @Override
     public void run() {
@@ -103,6 +112,7 @@ public class InsultActor implements ActorInterface, Runnable {
         }catch (InternalError e){
             //System.out.println("I died");
         }
+        ActorContext.getInstance().getRegistry().remove(name);
     }
 
 }
