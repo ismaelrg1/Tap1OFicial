@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="packages para hacer cada parte del codigo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reflectionDinamicProxy/DynamicProxy.java" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actor/ActorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorInterface.java" afterDir="false" />
+>>>>>>> Ismael
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +56,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ismae/Downloads/Tap1OFicial-main/Tap1OFicial-main/TAPOf/TAPOf&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+=======
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -64,8 +83,9 @@
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.spelling",
     "vue.rearranger.settings.migration": "true"
+>>>>>>> Ismael
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />

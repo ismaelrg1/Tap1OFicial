@@ -1,6 +1,12 @@
 package decorator;
 
 import actor.*;
+<<<<<<< HEAD
+
+import java.util.concurrent.LinkedBlockingQueue;
+
+public class FireWallDecorator implements ActorInterface {
+=======
 import helloWorld.RingActor;
 
 import java.util.LinkedList;
@@ -16,6 +22,7 @@ public class FireWallDecorator extends RingActor {
         this.actor = actor;
     }
 
+>>>>>>> Ismael
     @Override
     public void send(MessageInterface msg) {
 
@@ -27,11 +34,14 @@ public class FireWallDecorator extends RingActor {
     }
 
     @Override
+<<<<<<< HEAD
+=======
     public LinkedList<MessageInterface> getQueue() {
         return null;
     }
 
     @Override
+>>>>>>> Ismael
     public void run() {
 
     }
