@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="packages para hacer cada parte del codigo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
@@ -25,6 +26,12 @@
       <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
     </list>
     <list id="04b27428-8d99-4a15-9e42-ee5312605345" name="Changes by mario" comment="" />
+=======
+    <list default="true" id="44485938-ab18-4d69-a820-bd8bb6a9c107" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Vista/Ventana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> f0a0d104beb7f883a60166bff7b95b77e24376e8
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +61,7 @@
       </UrlAndAccount>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/src/helloWorld/ActorProxy.java">
       <ranges>
@@ -88,6 +96,11 @@
         <range start1="130" end1="131" start2="131" end2="134" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
       </ranges>
     </file>
+=======
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/lang/Runnable.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/util/HashMap.java" root0="SKIP_INSPECTION" />
+>>>>>>> f0a0d104beb7f883a60166bff7b95b77e24376e8
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
