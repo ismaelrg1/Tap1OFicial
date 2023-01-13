@@ -17,6 +17,9 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 import validation.*;
 
+/**
+ * @author Ismael & Mario
+ */
 public class App {
     public static void main(String[] args) throws Exception {
 

@@ -1,12 +1,28 @@
-package Vista;
+package view;
 
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+
+import controller.Controlador;
+
+/**
+ *
+ * @author Ismael & Mario
+ */
 public class Ventana extends javax.swing.JFrame {
 
     /**
      * Creates new form Ventana
      */
+    private final Controlador c;
     public Ventana() {
         initComponents();
+        jPanel2.setVisible(false);
+        jPanel1.setVisible(true);
+        jPanel3.setVisible(false);
+        c = new Controlador();
     }
 
     /**
@@ -37,11 +53,13 @@ public class Ventana extends javax.swing.JFrame {
         jComboBox3 = new javax.swing.JComboBox<>();
         jButton6 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(640, 480));
         setMinimumSize(new java.awt.Dimension(640, 480));
-        setPreferredSize(new java.awt.Dimension(0, 0));
         setResizable(false);
         setSize(new java.awt.Dimension(640, 480));
 
@@ -114,7 +132,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(640, 480));
         jPanel2.setPreferredSize(new java.awt.Dimension(640, 480));
 
-        jButton3.setText("Atras");
+        jButton3.setText("Back");
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -130,10 +148,10 @@ public class Ventana extends javax.swing.JFrame {
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Decorator", "EncryptDecorator", "LambdaDecorator", "FirewallDecorator" }));
 
-        jButton5.setText("CREAR");
+        jButton5.setText("CREATE");
         jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
+                jActorCreate(evt);
             }
         });
 
@@ -207,9 +225,7 @@ public class Ventana extends javax.swing.JFrame {
 
         jScrollPane2.setViewportView(jList2);
 
-        jTextField1.setText("jTextField1");
-
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Message", "AddInsultMessage", "GetInsultMessage", "GetAllInsultMessage" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Message", "AddInsultMessage", "GetInsultMessage", "GetAllInsultMessage", "QuitMessage" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -218,8 +234,26 @@ public class Ventana extends javax.swing.JFrame {
 
         jButton6.setText("Send");
         jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSendMessage(evt);
+            }
+        });
+
 
         jLabel4.setText("Send Message");
+
+        jButton7.setText("RingTest");
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton7MouseClicked(evt);
+            }
+        });
+
+        jTextField2.setText("3/3");
+
+        jLabel5.setText("Nº of RingActors/Nº of laps");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -228,7 +262,7 @@ public class Ventana extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                                 .addComponent(jButton4)
@@ -244,7 +278,16 @@ public class Ventana extends javax.swing.JFrame {
                                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                                                 .addComponent(jLabel4)
                                                                 .addGap(27, 27, 27)))
-                                                .addGap(74, 74, 74))))
+                                                .addGap(74, 74, 74))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                                .addComponent(jButton7)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jLabel5)
+                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                .addGap(26, 26, 26)
+                                                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(53, 53, 53))))
         );
         jPanel3Layout.setVerticalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,7 +303,13 @@ public class Ventana extends javax.swing.JFrame {
                                                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jButton6)
-                                                .addGap(141, 141, 141)
+                                                .addGap(44, 44, 44)
+                                                .addComponent(jLabel5)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(jButton7)
+                                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(52, 52, 52)
                                                 .addComponent(jButton4))
                                         .addComponent(jScrollPane2))
                                 .addGap(54, 54, 54))
@@ -324,7 +373,6 @@ public class Ventana extends javax.swing.JFrame {
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
 
-        System.out.println("entro");
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         jPanel3.setVisible(false);
@@ -345,14 +393,36 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {
+    private void jActorCreate(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-        System.out.println(jComboBox1.getSelectedItem()+" "+jComboBox2.getSelectedItem() );
-        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AQUI Creo el ACTOR Con PROXY Y LO PONGO EN ACTORCONTEXT
+        c.createActor((String)jComboBox1.getSelectedItem(),(String)jComboBox2.getSelectedItem());
+        jList2.removeAll();
+        String[] list = c.getAllActors();
+        jList2.setListData(list);
     }
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
+    }
+
+    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {
+        c.ringTest(jTextField2.getText());
+        try {
+            Thread.sleep(200);
+            jList2.removeAll();
+            String[] list = c.getAllActors();
+            jList2.setListData(list);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void jSendMessage(java.awt.event.MouseEvent evt) {
+        c.sendMessage((String) jList2.getModel().getElementAt(jList2.getSelectedIndex()),(String)jComboBox3.getSelectedItem(),jTextField1.getText());
+        jList2.removeAll();
+        String[] list = c.getAllActors();
+        jList2.setListData(list);
+
     }
 
     /**
@@ -364,6 +434,7 @@ public class Ventana extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
+        Controlador c2 = new Controlador();
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -383,13 +454,16 @@ public class Ventana extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        runFunction();
+
+    }
+    private static void runFunction(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Ventana().setVisible(true);
             }
         });
     }
-
     // Variables declaration - do not modify
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -397,6 +471,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -404,12 +479,15 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration
 }
+
 

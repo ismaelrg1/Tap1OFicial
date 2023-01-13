@@ -28,11 +28,13 @@ public class ActorContext extends Thread {
      * @return ActorProxy
      */
     public static ActorProxy spawnActor(String name, ActorInterface a){
+        System.out.println("Me estoy creando");
         ActorProxy proxy = new ActorProxy(a);
         a.setName(name);
         registry.put(name, proxy);
         Thread hilo = new Thread(a);
         hilo.start();
+        System.out.println("Tenemos: "+registry.size());
         return proxy;
     }
 
@@ -55,7 +57,7 @@ public class ActorContext extends Thread {
      * Remove all actors registered in the ActorContext HashMap
      */
     public void quitAll(){
-        registry.forEach((k,v)->v.send(new QuitMessage(v)));
+        registry.forEach((k,v)-> v.send(new QuitMessage(v)));
         registry.clear();
     }
 
@@ -71,8 +73,7 @@ public class ActorContext extends Thread {
      * @return String with all the actor's names
      */
     public String getNames(){
-        return registry.keySet().toString();
-    }
+        return registry.keySet().toString().replace("[", "").replace("]", ""); }
 
     /**
      * Get the ActorContext actor registry

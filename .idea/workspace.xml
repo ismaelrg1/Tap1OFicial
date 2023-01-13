@@ -4,34 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="packages para hacer cada parte del codigo">
+    <list default="true" id="df7948d3-93f1-4db8-84fc-37e7a4decde2" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/actor/ActorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/actor/ActorContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vista/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Ventana.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actor/ActorContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actor/ActorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helloWorld/RingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/RingActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/validation/TestActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/validation/TestActor.java" afterDir="false" />
     </list>
-    <list id="8327dc59-507f-436c-8eb8-96b00f659d75" name="Changes by deim" comment="" />
-    <list id="7797f039-ea6b-4b77-8b7f-022a15093261" name="Changes by ismae" comment="">
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloWorld/RingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/RingActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
+    <list id="459d8a39-5272-470f-89ec-34476477a450" name="Changes by ismae" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Vista/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Ventana.java" afterDir="false" />
     </list>
-    <list id="04b27428-8d99-4a15-9e42-ee5312605345" name="Changes by mario" comment="" />
-=======
-    <list default="true" id="44485938-ab18-4d69-a820-bd8bb6a9c107" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Vista/Ventana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
->>>>>>> f0a0d104beb7f883a60166bff7b95b77e24376e8
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,220 +25,93 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="d7042e8c-5960-436a-bebc-65a07344a52e" />
-        <option name="url" value="https://github.com/ismaelrg1/Tap1OFicial.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-<<<<<<< HEAD
   <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/helloWorld/ActorProxy.java">
+    <file path="$PROJECT_DIR$/src/view/Ventana.java">
       <ranges>
-        <range start1="10" end1="10" start2="10" end2="11" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="36" end1="36" start2="37" end2="42" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
+        <range start1="0" end1="1" start2="0" end2="1" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="2" end1="2" start2="2" end2="13" changelist="459d8a39-5272-470f-89ec-34476477a450" />
+        <range start1="7" end1="7" start2="18" end2="19" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="9" end1="9" start2="21" end2="25" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="39" end1="39" start2="55" end2="58" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="43" end1="44" start2="62" end2="62" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="116" end1="117" start2="134" end2="135" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="132" end1="133" start2="150" end2="151" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="135" end1="136" start2="153" end2="154" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="209" end1="212" start2="227" end2="228" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="220" end1="220" start2="236" end2="242" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="223" end1="223" start2="245" end2="257" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="230" end1="231" start2="264" end2="265" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="246" end1="247" start2="280" end2="290" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="262" end1="263" start2="305" end2="312" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="326" end1="327" start2="375" end2="375" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="347" end1="348" start2="395" end2="396" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="349" end1="351" start2="397" end2="401" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="356" end1="356" start2="406" end2="426" changelist="459d8a39-5272-470f-89ec-34476477a450" />
+        <range start1="366" end1="366" start2="436" end2="437" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="385" end1="385" start2="456" end2="460" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="391" end1="392" start2="466" end2="466" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="399" end1="399" start2="473" end2="474" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="406" end1="406" start2="481" end2="482" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="412" end1="412" start2="488" end2="489" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
+        <range start1="414" end1="414" start2="491" end2="492" changelist="459d8a39-5272-470f-89ec-34476477a450" />
       </ranges>
     </file>
-    <file path="$PROJECT_DIR$/src/proxy/InsultActor.java">
-      <ranges>
-        <range start1="13" end1="13" start2="13" end2="14" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="92" end1="92" start2="93" end2="94" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="94" end1="95" start2="96" end2="104" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
-        <range start1="105" end1="105" start2="114" end2="115" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/helloWorld/RingActor.java">
-      <ranges>
-        <range start1="14" end1="15" start2="14" end2="15" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="18" end1="18" start2="18" end2="19" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="70" end1="71" start2="71" end2="72" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="89" end1="89" start2="90" end2="91" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="106" end1="106" start2="108" end2="113" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/App.java">
-      <ranges>
-        <range start1="7" end1="7" start2="7" end2="8" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="55" end1="56" start2="56" end2="57" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="63" end1="64" start2="64" end2="65" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-        <range start1="73" end1="74" start2="74" end2="75" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
-        <range start1="126" end1="127" start2="127" end2="128" changelist="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" />
-        <range start1="130" end1="131" start2="131" end2="134" changelist="7797f039-ea6b-4b77-8b7f-022a15093261" />
-      </ranges>
-    </file>
-=======
-  <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/lang/Runnable.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/util/HashMap.java" root0="SKIP_INSPECTION" />
->>>>>>> f0a0d104beb7f883a60166bff7b95b77e24376e8
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2ISUuaWTdXglN2X6P3frBF3exQC" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JavaMethodFindUsagesOptions.isOverridingMethods&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ismae/Downloads/Tap1OFicial-main/Tap1OFicial-main/TAPOf/TAPOf&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.spelling&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="TAPOf" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestActor.pingPong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Ventana" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="view.Ventana" />
       <module name="TAPOf" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="validation.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="validation" />
-      <option name="MAIN_CLASS_NAME" value="validation.TestActor" />
-      <option name="METHOD_NAME" value="pingPong" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.TestActor.pingPong" />
+        <item itemvalue="Application.Ventana" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="false" transferred="true" />
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c067d2a4-39b4-49ac-a9d3-bac87d2b7c04" name="Changes" comment="" />
-      <created>1670174706128</created>
+      <changelist id="df7948d3-93f1-4db8-84fc-37e7a4decde2" name="Changes" comment="" />
+      <created>1673628562019</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1670174706128</updated>
-      <workItem from="1670174707252" duration="3562000" />
-      <workItem from="1670253841208" duration="11891000" />
-      <workItem from="1670349643703" duration="5333000" />
-      <workItem from="1670413414269" duration="43000" />
-      <workItem from="1670439451680" duration="1252000" />
-      <workItem from="1670511696136" duration="4349000" />
-      <workItem from="1670608948185" duration="5113000" />
-      <workItem from="1670852739809" duration="2949000" />
-      <workItem from="1670945199400" duration="3706000" />
-      <workItem from="1670949435807" duration="350000" />
-      <workItem from="1670950241514" duration="44000" />
-      <workItem from="1672141034074" duration="3724000" />
-      <workItem from="1672177112102" duration="970000" />
-      <workItem from="1672222883592" duration="7782000" />
-      <workItem from="1672341219358" duration="4982000" />
-      <workItem from="1672395677032" duration="6131000" />
-      <workItem from="1672422007138" duration="1302000" />
-      <workItem from="1672608799538" duration="3078000" />
-      <workItem from="1672683530911" duration="10956000" />
-      <workItem from="1673088650628" duration="5141000" />
-      <workItem from="1673093850626" duration="2715000" />
-      <workItem from="1673178086932" duration="4159000" />
-      <workItem from="1673376552948" duration="2272000" />
-      <workItem from="1673452837964" duration="3822000" />
+      <updated>1673628562019</updated>
+      <workItem from="1673628563852" duration="11172000" />
     </task>
-    <task id="LOCAL-00001" summary="Codigo ordenado en packages y con la funcion getNames hecha">
-      <created>1670176816339</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1670176816339</updated>
-    </task>
-    <task id="LOCAL-00002" summary="packages para hacer cada parte del codigo">
-      <created>1670177742927</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1670177742927</updated>
-    </task>
-    <task id="LOCAL-00003" summary="packages para hacer cada parte del codigo">
-      <created>1670177854174</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1670177854174</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Codigo ordenado en packages y con la funcion getNames hecha" />
-    <MESSAGE value="packages para hacer cada parte del codigo" />
-    <option name="LAST_COMMIT_MESSAGE" value="packages para hacer cada parte del codigo" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/validation/TestActor.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>

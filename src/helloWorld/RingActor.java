@@ -55,17 +55,16 @@ public class RingActor implements Runnable, ActorInterface {
         else if(msg instanceof LoopMessage){
             LoopMessage msgLoop = (LoopMessage) msg;
             if(msgLoop.getROUND()==0){
-                //System.out.println(msg.getMsg()+" miliseconds");
+                System.out.println(msg.getMsg()+" miliseconds");
             }else {
                 if (this == msgLoop.getINITIAL()) {
                     msgLoop.setROUND(msgLoop.getROUND() - 1);
-                   // System.out.println("lap: " + msgLoop.getROUND());
+                   System.out.println("lap: " + msgLoop.getROUND());
                 }
                 long end = System.currentTimeMillis();
                 long result = (end - start);
                 result = Long.parseLong(msg.getMsg())+result;
                 msg.setMsg(String.valueOf(result));
-
                 this.next.send(msg);
             }
         }
