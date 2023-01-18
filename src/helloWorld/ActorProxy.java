@@ -21,7 +21,7 @@ public class ActorProxy implements ActorInterface {
     }
 
     @Override
-    public void run() {}
+    public void run() {actor.run();}
 
 
     @Override
@@ -41,8 +41,22 @@ public class ActorProxy implements ActorInterface {
         actor.setName(s);
     }
 
+    @Override
+    public String getName() {
+        return actor.getName();
+    }
+
+    @Override
+    public void process(MessageInterface msg) {
+        actor.process(msg);
+    }
+
 
     public ActorInterface getActor(){
         return this.actor;
+    }
+
+    public String toString(){
+        return actor.toString();
     }
 }

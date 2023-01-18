@@ -1,6 +1,7 @@
 package decorator;
 
 import actor.*;
+import helloWorld.Message;
 import helloWorld.RingActor;
 
 import java.util.Iterator;
@@ -9,13 +10,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class FireWallDecorator extends RingActor {
+public class FireWallDecorator extends ActorDecorator {
 
-    private RingActor actor;
 
-    public FireWallDecorator(RingActor actor) {
-        super();
-        this.actor = actor;
+    public FireWallDecorator(ActorInterface actor) {
+        super(actor);
     }
 
     /**
@@ -26,28 +25,36 @@ public class FireWallDecorator extends RingActor {
      */
     @Override
     public void send(MessageInterface msg) {
-        Boolean good = false;
-        Set<String> actors = ActorContext.getInstance().getRegistry().keySet();
-        Iterator<String> i = actors.iterator();
-        ActorInterface actor = msg.getActor();
-        while(i.hasNext() && !good){
-            good=ActorContext.getInstance().getRegistry().get(i.next()).equals(actor);
-        }
-        if(good)
+        if (msg instanceof Message) {
+            Boolean good = false;
+            Set<String> actors = ActorContext.getInstance().getRegistry().keySet();
+            Iterator<String> i = actors.iterator();
+            ActorInterface actor = msg.getActor();
+
+            if (actor == null)
+                good = true;
+
+            while (i.hasNext() && !good) {
+                good = ActorContext.getInstance().getRegistry().get(i.next()).equals(actor);
+            }
+
+
+            if (good)
+                super.send(msg);
+
+            if (actor == null)
+                System.out.println("Main Are you good? " + good.toString());
+            else
+                System.out.println(actor.toString() + " Are you good? " + good.toString());
+        }else{
             super.send(msg);
-        System.out.printf("Are you good? "+good.toString());
+        }
     }
 
 
-    @Override
-    public LinkedBlockingQueue<MessageInterface> getMsgQueue() {
-        return null;
+    public String toString(){
+        return actor.toString();
     }
 
-
-    @Override
-    public LinkedList<MessageInterface> getQueue() {
-        return null;
-    }
 
 }

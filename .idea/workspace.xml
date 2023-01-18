@@ -5,18 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df7948d3-93f1-4db8-84fc-37e7a4decde2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/decorator/ActorDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TAPOf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TAPOf.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TAPOf/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/actor/ActorContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/actor/ActorContext.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/controller/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/controller/Controlador.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vista/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Ventana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actor/ActorContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actor/ActorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/LambdaFirewallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/LambdaFirewallDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helloWorld/RingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/RingActor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
     </list>
-    <list id="459d8a39-5272-470f-89ec-34476477a450" name="Changes by ismae" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Vista/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Ventana.java" afterDir="false" />
-    </list>
+    <list id="459d8a39-5272-470f-89ec-34476477a450" name="Changes by ismae" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,37 +34,19 @@
       </list>
     </option>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/view/Ventana.java">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="1" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="2" end1="2" start2="2" end2="13" changelist="459d8a39-5272-470f-89ec-34476477a450" />
-        <range start1="7" end1="7" start2="18" end2="19" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="9" end1="9" start2="21" end2="25" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="39" end1="39" start2="55" end2="58" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="43" end1="44" start2="62" end2="62" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="116" end1="117" start2="134" end2="135" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="132" end1="133" start2="150" end2="151" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="135" end1="136" start2="153" end2="154" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="209" end1="212" start2="227" end2="228" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="220" end1="220" start2="236" end2="242" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="223" end1="223" start2="245" end2="257" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="230" end1="231" start2="264" end2="265" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="246" end1="247" start2="280" end2="290" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="262" end1="263" start2="305" end2="312" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="326" end1="327" start2="375" end2="375" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="347" end1="348" start2="395" end2="396" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="349" end1="351" start2="397" end2="401" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="356" end1="356" start2="406" end2="426" changelist="459d8a39-5272-470f-89ec-34476477a450" />
-        <range start1="366" end1="366" start2="436" end2="437" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="385" end1="385" start2="456" end2="460" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="391" end1="392" start2="466" end2="466" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="399" end1="399" start2="473" end2="474" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="406" end1="406" start2="481" end2="482" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="412" end1="412" start2="488" end2="489" changelist="df7948d3-93f1-4db8-84fc-37e7a4decde2" />
-        <range start1="414" end1="414" start2="491" end2="492" changelist="459d8a39-5272-470f-89ec-34476477a450" />
-      </ranges>
-    </file>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/lang/Runnable.java" root0="SKIP_INSPECTION" />
+    <setting file="jar://$PROJECT_DIR$/../../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/jdk/internal/misc/Unsafe.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KVVkuCJJk33fXHbCKdSiYUcyBM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -71,15 +58,27 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/ismae/Downloads/junitlab_4.0/junitlab/junit-4.11.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
+      <module name="TAPOf" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Ventana" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="view.Ventana" />
       <module name="TAPOf" />
@@ -95,6 +94,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="Application.Ventana" />
       </list>
     </recent_temporary>
@@ -108,10 +108,33 @@
       <option name="presentableId" value="Default" />
       <updated>1673628562019</updated>
       <workItem from="1673628563852" duration="11172000" />
+      <workItem from="1674059886843" duration="8976000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/App.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -22,8 +22,11 @@ import validation.*;
  */
 public class App {
     public static void main(String[] args) throws Exception {
+/*
 
-                    /*HelloWorld Actor*/
+                    */
+/*HelloWorld Actor*//*
+
 
         ActorProxy hello = ActorContext.spawnActor("hello",new RingActor());
 
@@ -42,7 +45,9 @@ public class App {
         System.out.println(ActorContext.getInstance().getNames());
 
     //////////////////////////////////////////////////////////////////////////////
-                    /* InsultActor with Actor Proxy */
+                    */
+/* InsultActor with Actor Proxy *//*
+
 
 
         ActorProxy2 insult = ActorContext.spawnActor2("hola",new InsultActor());
@@ -67,9 +72,11 @@ public class App {
         MessageInterface r2 = insult.receive();
         System.out.println("Final Insults "+r2.getMsg());
 
+*/
 
     //////////////////////////////////////////////////////////////
                 /* Encrypt/Decrypt Decorator Pattern */
+/*
 
         ActorProxy pepe = ActorContext.spawnActor("pepe",new EncryptionDecorator(new RingActor()));
         ActorProxy manoli = ActorContext.spawnActor("manoli",new EncryptionDecorator(new RingActor()));
@@ -80,7 +87,9 @@ public class App {
 
 
     ////////////////////////////////////////////////////////////////
-                /* Firewall Decorator Pattern */
+                 */
+/*Firewall Decorator Pattern *//*
+
 
         ActorProxy evilCompilator = new ActorProxy(new RingActor());
         ActorProxy superman = ActorContext.spawnActor("superman", new RingActor());
@@ -91,7 +100,9 @@ public class App {
 
 
     ////////////////////////////////////////////////////////////////
-                /* LambdaFirewall Decorator Pattern */
+                 */
+/*LambdaFirewall Decorator Pattern *//*
+
 
         ActorProxy filter = ActorContext.spawnActor("filter", new LambdaFirewallDecorator(new RingActor()));
         ActorProxy reciver = ActorContext.spawnActor("reciver", new LambdaFirewallDecorator(new RingActor()));
@@ -107,9 +118,38 @@ public class App {
         reciver.send(new Message(filter,"perfect fail"));           // YES
         reciver.send(new Message(filter,"Ismael"));                 // YES
 
-    /////////////////////////////////////////////////////////////////////////////////////////
+*/
 
-                    /*Dynamic Proxy Pattern*/
+    /////////////////////////////////////////////////////////////////////////////////////////
+                    /*Pipeling Decorators*/
+        Thread.sleep(2000);
+        System.out.println("\n\n\nPipeling");
+        ActorProxy pipelin = ActorContext.spawnActor("pipe",new FireWallDecorator(new LambdaFirewallDecorator(new EncryptionDecorator(new RingActor()))));
+        //ActorProxy pipelin2 = ActorContext.spawnActor("pipe2",new EncryptionDecorator(new LambdaFirewallDecorator(new FireWallDecorator(new RingActor()))));
+
+
+        pipelin.send(new Message(null, "Encripted"));
+ /*       Thread.sleep(500);
+        pipelin2.send(new Message(reciver, "Version2"));
+        Thread.sleep(500);
+
+        pipelin.send(new AddClosureMessage((String p)->p.startsWith("i")));
+        Thread.sleep(500);
+        pipelin2.send(new AddClosureMessage((String p)->p.startsWith("p")));
+        Thread.sleep(500);
+
+        pipelin.send(new Message(filter, "ismale"));
+        Thread.sleep(500);
+        pipelin2.send(new Message(reciver, "paco")); //ERROR MESSAGE Sent because was encrypted before checking the closures
+        Thread.sleep(500);
+        pipelin.send(new Message(evilCompilator,"Virus"));
+        Thread.sleep(500);
+        pipelin2.send(new Message(evilCompilator,"Virus"));
+
+
+    ////////////////////////////////////////////////////////////////
+                    //Dynamic Proxy Pattern
+
 
         // Creating the Dynamic Proxy
         ActorProxy2 badSmell = ActorContext.spawnActor2("badSmell", new InsultActor());
@@ -126,17 +166,19 @@ public class App {
         //mS.subscribe("pepe");
 
     //////////////////////////////////////////////////////////
-                        /*Unit Tests*/
+                        //Unit Tests
+*//*
 
-        /*Result res = JUnitCore.runClasses(TestSuite.class);
+        Result res = JUnitCore.runClasses(TestSuite.class);
         for (Failure failure : res.getFailures()) {
             System.out.println(failure.toString());
         }
-        System.out.println("TEST Actor OK? " + res.wasSuccessful());*/
+        System.out.println("TEST Actor OK? " + res.wasSuccessful());
+*//*
+        ActorContext.getInstance().quitAll();
+        Thread.sleep(2000);
+        System.out.println("Hay "+ActorContext.getInstance().getNames().length()+" Actores y sus nombres son "+ActorContext.getInstance().getNames());
 
-
-
-
-
+*/
     }
 }

@@ -9,7 +9,7 @@ import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.stream.Collectors;
 
-public class InsultActor implements ActorInterface, Runnable {
+public class InsultActor implements ActorInterface {
 
     private String name;
     private LinkedList<MessageInterface> insultQueue;
@@ -42,6 +42,18 @@ public class InsultActor implements ActorInterface, Runnable {
         return null;
     }
 
+    public MessageInterface receive() throws NoSuchElementException{return null;}
+
+    @Override
+    public void setName(String s) {
+        this.name=s;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
     /**
      * It processes the message according to the type of class it is.
      * QuitMessage -> Eliminates the Actor Thread
@@ -50,66 +62,55 @@ public class InsultActor implements ActorInterface, Runnable {
      * GetAllInsultsMessage -> Return a String with all the insults of the ActorInsult insult list
      * PingPongMessage -> Sends "n" time a message to its mate
      */
-    private void process() throws InternalError{
-        try {
-            // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
-            MessageInterface msg = msgQueue.take();
-            if (msg instanceof QuitMessage) {
-                throw new InternalError();
+    @Override
+    public void process(MessageInterface msg) throws InternalError {
+        // Retrieves and removes the head of this queue, waiting (Block) if necessary until a message becomes available.
+        if (msg instanceof QuitMessage) {
+            throw new InternalError();
+        }
+        else if(msg instanceof AddInsultMessage){
+            insultQueue.add(new Message(null, msg.getMsg()));
+        }
+        else if(msg instanceof GetInsultMessage) {
+            Random rand = new Random();
+            msg.getActor().getQueue().add(this.insultQueue.get(rand.nextInt(insultQueue.size())));
+        }
+        else if(msg instanceof GetAllInsultsMessage){
+            // Option 1
+            /*String s = "";
+            for(MessageInterface m:insultQueue){
+                s+=m.getMsg();
             }
-            else if(msg instanceof AddInsultMessage){
-                insultQueue.add(new Message(null, msg.getMsg()));
-            }
-            else if(msg instanceof GetInsultMessage) {
-                Random rand = new Random();
-                msg.getActor().getQueue().add(this.insultQueue.get(rand.nextInt(insultQueue.size())));
-            }
-            else if(msg instanceof GetAllInsultsMessage){
-                // Option 1
-                /*String s = "";
-                for(MessageInterface m:insultQueue){
-                    s+=m.getMsg();
-                }
-                msg.getActor().getQueue().add(new Message(null,s));
-                // Option 2
-                //insultQueue.forEach((m)->msg.getActor().getQueue().add(m));*/
-                // Option 3
-                msg.getActor().getQueue().add(new Message(null,insultQueue.toString()));
-            } else if (msg instanceof PingPongMessage) {
-                int counter = Integer.parseInt(msg.getMsg());
+            msg.getActor().getQueue().add(new Message(null,s));
+            // Option 2
+            //insultQueue.forEach((m)->msg.getActor().getQueue().add(m));*/
+            // Option 3
+            msg.getActor().getQueue().add(new Message(null,insultQueue.toString()));
+        } else if (msg instanceof PingPongMessage) {
+            int counter = Integer.parseInt(msg.getMsg());
 
-                if (counter--==0){
-                    return ;
-                }
-                //System.out.println("I'm in the Actor "+this+" and I'm the number "+counter);
-                msg.getActor().send(new PingPongMessage(this, counter));
-
-            } else {
-                //System.out.println(msg.getMsg());
+            if (counter--==0){
+                return ;
             }
+            //System.out.println("I'm in the Actor "+this+" and I'm the number "+counter);
+            msg.getActor().send(new PingPongMessage(this, counter));
 
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        } else {
+            //System.out.println(msg.getMsg());
         }
 
     }
 
-    public MessageInterface receive() throws NoSuchElementException{return null;}
 
-    @Override
-    public void setName(String s) {
-        this.name=s;
-    }
-
-    ;
 
     @Override
     public void run() {
         try {
             while (true) {
-                process();
+                MessageInterface msg = msgQueue.take();
+                process(msg);
             }
-        }catch (InternalError e){
+        }catch (InternalError | InterruptedException e){
             //System.out.println("I died");
         }
         ActorContext.getInstance().getRegistry().remove(name);

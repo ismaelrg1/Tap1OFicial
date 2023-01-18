@@ -59,4 +59,14 @@ public class ActorProxy2 implements ActorInterface {
         actor.setName(s);
     }
 
+    @Override
+    public String getName() {
+        return actor.getName();
+    }
+
+    @Override
+    public void process(MessageInterface msg) {
+        actor.process(msg);
+    }
+
 }

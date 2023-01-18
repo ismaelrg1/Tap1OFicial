@@ -10,7 +10,7 @@ import actor.*;
 import validation.*;
 
 
-public class RingActor implements Runnable, ActorInterface {
+public class RingActor implements ActorInterface {
 
     private String name;
     private LinkedBlockingQueue<MessageInterface> msgQueue;
@@ -77,7 +77,7 @@ public class RingActor implements Runnable, ActorInterface {
         try {
             while (true) {
                 MessageInterface msg = msgQueue.take();
-                this.process(msg);
+                process(msg);
                 //System.out.println("I have processed");
             }
         }catch (InternalError e) {
@@ -111,15 +111,24 @@ public class RingActor implements Runnable, ActorInterface {
         this.name=s;
     }
 
- /*   public void notifyChange(String s){
-        if(listener!=null) {
-            //listener.noty(s);
-            if (s == "r") {
-                // sends message received
-            }
-        }
+    @Override
+    public String getName() {
+        return name;
     }
-*/
+
+    /*   public void notifyChange(String s){
+           if(listener!=null) {
+               //listener.noty(s);
+               if (s == "r") {
+                   // sends message received
+               }
+           }
+       }
+   */
+    public String toString(){
+
+        return name;
+    }
 
 
 }

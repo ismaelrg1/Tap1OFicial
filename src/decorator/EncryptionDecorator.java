@@ -1,15 +1,20 @@
 package decorator;
 
+import actor.ActorInterface;
 import actor.MessageInterface;
+import helloWorld.Message;
 import helloWorld.QuitMessage;
 import helloWorld.RingActor;
 
-public class EncryptionDecorator extends RingActor {
-    private RingActor actor;      // actor that will be decorated
+import java.util.LinkedList;
+import java.util.NoSuchElementException;
+import java.util.concurrent.LinkedBlockingQueue;
 
-    public EncryptionDecorator(RingActor a){
-        super();
-        actor=a;
+public class EncryptionDecorator extends ActorDecorator {
+
+
+    public EncryptionDecorator(ActorInterface a){
+        super(a);
     }
 
     /**
@@ -18,7 +23,8 @@ public class EncryptionDecorator extends RingActor {
      */
     @Override
     public void send(MessageInterface msg) {
-        encrypt(msg);
+        if(msg instanceof Message)
+            encrypt(msg);
         //System.out.println("I'm in the decorator");
         super.send(msg);
     }
@@ -69,13 +75,17 @@ public class EncryptionDecorator extends RingActor {
      * Calls the Decrypt function and then process the Message
      * @param msg
      */
-    @Override
     public void process(MessageInterface msg){
-        System.out.println("Mensaje Encriptado: "+msg.getMsg());
-        decrypt(msg);
+        if(msg instanceof Message){
+            System.out.println("Mensaje Encriptado: "+msg.getMsg());
+            decrypt(msg);}
         //System.out.println("I'm in the Decorator");
         super.process(msg);
     }
 
+
+    public String toString(){
+        return actor.toString();
+    }
 
 }
