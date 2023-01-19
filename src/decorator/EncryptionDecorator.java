@@ -12,9 +12,10 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class EncryptionDecorator extends ActorDecorator {
 
-
-    public EncryptionDecorator(ActorInterface a){
-        super(a);
+    private ActorInterface actor;
+    public EncryptionDecorator(ActorInterface actor){
+        super(actor);
+        this.actor = actor;
     }
 
     /**
@@ -26,7 +27,7 @@ public class EncryptionDecorator extends ActorDecorator {
         if(msg instanceof Message)
             encrypt(msg);
         //System.out.println("I'm in the decorator");
-        super.send(msg);
+        actor.send(msg);
     }
 
     /**
@@ -80,7 +81,7 @@ public class EncryptionDecorator extends ActorDecorator {
             System.out.println("Mensaje Encriptado: "+msg.getMsg());
             decrypt(msg);}
         //System.out.println("I'm in the Decorator");
-        super.process(msg);
+        actor.process(msg);
     }
 
 

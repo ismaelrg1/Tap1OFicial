@@ -12,9 +12,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class FireWallDecorator extends ActorDecorator {
 
+    private ActorInterface actor;
 
     public FireWallDecorator(ActorInterface actor) {
         super(actor);
+        this.actor = actor;
     }
 
     /**
@@ -29,25 +31,25 @@ public class FireWallDecorator extends ActorDecorator {
             Boolean good = false;
             Set<String> actors = ActorContext.getInstance().getRegistry().keySet();
             Iterator<String> i = actors.iterator();
-            ActorInterface actor = msg.getActor();
+            ActorInterface sender = msg.getActor();
 
-            if (actor == null)
+            if (sender == null)
                 good = true;
 
             while (i.hasNext() && !good) {
-                good = ActorContext.getInstance().getRegistry().get(i.next()).equals(actor);
+                good = ActorContext.getInstance().getRegistry().get(i.next()).equals(sender);
             }
 
 
             if (good)
-                super.send(msg);
+                actor.send(msg);
 
-            if (actor == null)
+            if (sender == null)
                 System.out.println("Main Are you good? " + good.toString());
             else
-                System.out.println(actor.toString() + " Are you good? " + good.toString());
+                System.out.println(sender.toString() + " Are you good? " + good.toString());
         }else{
-            super.send(msg);
+            actor.send(msg);
         }
     }
 

@@ -24,6 +24,14 @@ public class RingActor implements ActorInterface {
         this.next = null;
         this.msgQueue = new LinkedBlockingQueue<MessageInterface>();
     }
+    public RingActor(String name){
+        // listener = null;
+        // notifyChange("c");
+        this.name = name;
+        this.next = null;
+        this.msgQueue = new LinkedBlockingQueue<MessageInterface>();
+    }
+
  /*   public RingActor(ActorListener aL){
         this.listener = aL;
         notifyChange("c");

@@ -5,21 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="df7948d3-93f1-4db8-84fc-37e7a4decde2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/decorator/ActorDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TAPOf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TAPOf.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/controller/Controlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/controller/Controlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TAPOf/helloWorld/RingActor.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actor/ActorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/actor/ActorInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/decorator/ActorDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/ActorDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/EncryptionDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/FireWallDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/decorator/LambdaFirewallDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorator/LambdaFirewallDecorator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/ActorProxy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helloWorld/RingActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/helloWorld/RingActor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/ActorProxy2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/InsultActor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/InsultActor.java" afterDir="false" />
     </list>
     <list id="459d8a39-5272-470f-89ec-34476477a450" name="Changes by ismae" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,25 +44,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "C:/Users/ismae/Downloads/junitlab_4.0/junitlab/junit-4.11.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ismae/Downloads/junitlab_4.0/junitlab/junit-4.11.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
@@ -108,7 +100,8 @@
       <option name="presentableId" value="Default" />
       <updated>1673628562019</updated>
       <workItem from="1673628563852" duration="11172000" />
-      <workItem from="1674059886843" duration="8976000" />
+      <workItem from="1674059886843" duration="9277000" />
+      <workItem from="1674127446152" duration="1341000" />
     </task>
     <servers />
   </component>
@@ -131,8 +124,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/App.java</url>
-          <line>130</line>
+          <line>126</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/decorator/FireWallDecorator.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/App.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/App.java</url>
+          <line>91</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

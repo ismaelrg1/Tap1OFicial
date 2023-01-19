@@ -10,10 +10,12 @@ import java.util.function.Predicate;
 
 public class LambdaFirewallDecorator extends ActorDecorator {
     private LinkedList<Predicate<String>> filter;
+    private ActorInterface actor;
 
 
     public LambdaFirewallDecorator(ActorInterface actor){
         super(actor);
+        this.actor = actor;
         filter = new LinkedList<>();
     }
 
@@ -40,11 +42,11 @@ public class LambdaFirewallDecorator extends ActorDecorator {
             }
             if (closureTest) {
                 System.out.println("The Message "+ msg.getMsg()+" I have passed the Closures");
-                super.send(msg);
+                actor.send(msg);
             }
 
         }else{
-            super.send(msg);
+            actor.send(msg);
         }
     }
 

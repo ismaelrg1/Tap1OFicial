@@ -76,7 +76,6 @@ public class App {
 
     //////////////////////////////////////////////////////////////
                 /* Encrypt/Decrypt Decorator Pattern */
-/*
 
         ActorProxy pepe = ActorContext.spawnActor("pepe",new EncryptionDecorator(new RingActor()));
         ActorProxy manoli = ActorContext.spawnActor("manoli",new EncryptionDecorator(new RingActor()));
@@ -87,11 +86,10 @@ public class App {
 
 
     ////////////////////////////////////////////////////////////////
-                 */
-/*Firewall Decorator Pattern *//*
+                        //Firewall Decorator Pattern
 
 
-        ActorProxy evilCompilator = new ActorProxy(new RingActor());
+        ActorProxy evilCompilator = new ActorProxy(new RingActor("evilCompilator"));
         ActorProxy superman = ActorContext.spawnActor("superman", new RingActor());
         ActorProxy police = ActorContext.spawnActor("police", new FireWallDecorator(new RingActor()));
 
@@ -100,8 +98,7 @@ public class App {
 
 
     ////////////////////////////////////////////////////////////////
-                 */
-/*LambdaFirewall Decorator Pattern *//*
+                        //LambdaFirewall Decorator Pattern
 
 
         ActorProxy filter = ActorContext.spawnActor("filter", new LambdaFirewallDecorator(new RingActor()));
@@ -118,18 +115,17 @@ public class App {
         reciver.send(new Message(filter,"perfect fail"));           // YES
         reciver.send(new Message(filter,"Ismael"));                 // YES
 
-*/
 
     /////////////////////////////////////////////////////////////////////////////////////////
-                    /*Pipeling Decorators*/
+                    //Pipeling Decorators*
         Thread.sleep(2000);
         System.out.println("\n\n\nPipeling");
         ActorProxy pipelin = ActorContext.spawnActor("pipe",new FireWallDecorator(new LambdaFirewallDecorator(new EncryptionDecorator(new RingActor()))));
-        //ActorProxy pipelin2 = ActorContext.spawnActor("pipe2",new EncryptionDecorator(new LambdaFirewallDecorator(new FireWallDecorator(new RingActor()))));
+        ActorProxy pipelin2 = ActorContext.spawnActor("pipe2",new EncryptionDecorator(new LambdaFirewallDecorator(new FireWallDecorator(new RingActor()))));
 
 
         pipelin.send(new Message(null, "Encripted"));
- /*       Thread.sleep(500);
+        Thread.sleep(500);
         pipelin2.send(new Message(reciver, "Version2"));
         Thread.sleep(500);
 
@@ -148,6 +144,7 @@ public class App {
 
 
     ////////////////////////////////////////////////////////////////
+/*
                     //Dynamic Proxy Pattern
 
 
@@ -167,18 +164,18 @@ public class App {
 
     //////////////////////////////////////////////////////////
                         //Unit Tests
-*//*
+
 
         Result res = JUnitCore.runClasses(TestSuite.class);
         for (Failure failure : res.getFailures()) {
             System.out.println(failure.toString());
         }
         System.out.println("TEST Actor OK? " + res.wasSuccessful());
-*//*
+
         ActorContext.getInstance().quitAll();
         Thread.sleep(2000);
         System.out.println("Hay "+ActorContext.getInstance().getNames().length()+" Actores y sus nombres son "+ActorContext.getInstance().getNames());
-
 */
+
     }
 }

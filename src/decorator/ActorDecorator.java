@@ -8,8 +8,8 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedBlockingQueue;
 
-public class ActorDecorator implements ActorInterface {
-    ActorInterface actor;
+public abstract class ActorDecorator implements ActorInterface {
+    private ActorInterface actor;
 
     public ActorDecorator(ActorInterface actor){
         this.actor = actor;
