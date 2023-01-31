@@ -3,6 +3,7 @@ package decorator;
 import actor.ActorContext;
 import actor.ActorInterface;
 import actor.MessageInterface;
+import monitor.Observer;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -68,5 +69,9 @@ public abstract class ActorDecorator implements ActorInterface {
         //ActorContext.getInstance().getRegistry().remove(name);
     }
 
+    @Override
+    public void addListener(Observer listener) {
+        actor.addListener(listener);
+    }
 
 }

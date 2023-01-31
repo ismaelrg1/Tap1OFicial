@@ -1,5 +1,6 @@
 package helloWorld;
 import actor.*;
+import monitor.Observer;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -49,6 +50,11 @@ public class ActorProxy implements ActorInterface {
     @Override
     public void process(MessageInterface msg) {
         actor.process(msg);
+    }
+
+    @Override
+    public void addListener(Observer listener) {
+        actor.addListener(listener);
     }
 
 

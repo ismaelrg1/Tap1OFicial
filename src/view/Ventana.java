@@ -5,7 +5,13 @@ package view;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import actor.MessageInterface;
 import controller.Controlador;
+import monitor.Events;
+
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -13,16 +19,19 @@ import controller.Controlador;
  */
 public class Ventana extends javax.swing.JFrame {
 
+
     /**
      * Creates new form Ventana
      */
-    private final Controlador c;
     public Ventana() {
         initComponents();
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         jPanel3.setVisible(false);
-        c = new Controlador();
+        jPanel4.setVisible(false);
+        DefaultTableModel table = (DefaultTableModel) jTable2.getModel();
+        table.removeRow(0);
+        Controlador.getInstance().setTableModel(jTable2);
     }
 
     /**
@@ -35,27 +44,40 @@ public class Ventana extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        goToCreateButton = new javax.swing.JButton();
+        goToListButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton5 = new javax.swing.JButton();
+        backFrom2Button = new javax.swing.JButton();
+        selectActor = new javax.swing.JComboBox<>();
+        selectDecorator = new javax.swing.JComboBox<>();
+        createActorButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
+        backFrom3Button = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jButton6 = new javax.swing.JButton();
+        jTable2 = new javax.swing.JTable();
+        infoMessage = new javax.swing.JTextField();
+        selectMessage = new javax.swing.JComboBox<>();
+        sendButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        ringTestButton = new javax.swing.JButton();
+        infoRingTest = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        infoButton = new javax.swing.JButton();
+        GetTrafficButton = new javax.swing.JButton();
+        GetEventsButton = new javax.swing.JButton();
+        GetSentMsgButton = new javax.swing.JButton();
+        suscribeButton = new javax.swing.JButton();
+        unsubscribeButton = new javax.swing.JButton();
+        subscribeAllButton = new javax.swing.JButton();
+
+        jPanel4 = new javax.swing.JPanel();
+        BackButton4 = new javax.swing.JButton();
+        GetReceivedMsgButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(640, 480));
@@ -68,32 +90,22 @@ public class Ventana extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(640, 480));
         jPanel1.setPreferredSize(new java.awt.Dimension(640, 480));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("CREATE ACTORS");
-        jButton2.setActionCommand("Crear Actor");
-        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        goToCreateButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        goToCreateButton.setText("CREATE ACTORS");
+        goToCreateButton.setActionCommand("Crear Actor");
+        goToCreateButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        goToCreateButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
-            }
-        });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                goToCreateButtonMouseClicked(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("ACTOR LIST");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        goToListButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        goToListButton.setText("ACTOR LIST");
+        goToListButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        goToListButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                goToListButtonMouseClicked(evt);
             }
         });
 
@@ -106,9 +118,9 @@ public class Ventana extends javax.swing.JFrame {
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(85, 85, 85)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(goToListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(112, 112, 112)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(goToCreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(123, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -122,8 +134,8 @@ public class Ventana extends javax.swing.JFrame {
                                 .addComponent(jLabel3)
                                 .addGap(96, 96, 96)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(goToListButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(goToCreateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(180, Short.MAX_VALUE))
         );
 
@@ -132,26 +144,23 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(640, 480));
         jPanel2.setPreferredSize(new java.awt.Dimension(640, 480));
 
-        jButton3.setText("Back");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        backFrom2Button.setText("Back");
+        backFrom2Button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backFrom2Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                backFrom2ButtonMouseClicked(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ring Actor", "Insult Actor" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
+        selectActor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ring Actor", "Insult Actor" }));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Decorator", "EncryptDecorator", "LambdaDecorator", "FirewallDecorator" }));
+        selectDecorator.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "No Decorator", "EncryptDecorator", "LambdaDecorator", "FirewallDecorator" }));
 
-        jButton5.setText("CREATE");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+        createActorButton.setText("CREATE");
+        createActorButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        createActorButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jActorCreate(evt);
+                createActorButtonMouseClicked(evt);
             }
         });
 
@@ -171,21 +180,21 @@ public class Ventana extends javax.swing.JFrame {
                                                 .addGap(80, 80, 80)
                                                 .addComponent(jLabel1)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(selectActor, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGap(45, 45, 45)
                                                 .addComponent(jLabel2)
                                                 .addGap(34, 34, 34)
-                                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addComponent(selectDecorator, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(175, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jButton3)
+                                                .addComponent(backFrom2Button)
                                                 .addGap(26, 26, 26))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(createActorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(202, 202, 202))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -194,15 +203,15 @@ public class Ventana extends javax.swing.JFrame {
                                 .addGap(86, 86, 86)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addComponent(jLabel1)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(selectActor, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(82, 82, 82)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel2)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(selectDecorator, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(createActorButton, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton3)
+                                .addComponent(backFrom2Button)
                                 .addGap(54, 54, 54))
         );
 
@@ -210,109 +219,247 @@ public class Ventana extends javax.swing.JFrame {
         jPanel3.setMinimumSize(new java.awt.Dimension(640, 480));
         jPanel3.setPreferredSize(new java.awt.Dimension(640, 480));
 
-        jButton4.setText("Back");
-        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+        backFrom3Button.setText("Back");
+        backFrom3Button.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        backFrom3Button.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                backFrom3ButtonMouseClicked(evt);
             }
         });
 
-        jScrollPane2.setViewportView(jList2);
+        selectMessage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Message", "AddInsultMessage", "GetInsultMessage", "GetAllInsultMessage", "QuitMessage" }));
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Message", "AddInsultMessage", "GetInsultMessage", "GetAllInsultMessage", "QuitMessage" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
-            }
-        });
-
-        jButton6.setText("Send");
-        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
+        sendButton.setText("Send");
+        sendButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        sendButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jSendMessage(evt);
+                sendButtonMouseClicked(evt);
             }
         });
-
 
         jLabel4.setText("Send Message");
 
-        jButton7.setText("RingTest");
-        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton7.addMouseListener(new java.awt.event.MouseAdapter() {
+        ringTestButton.setText("RingTest");
+        ringTestButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ringTestButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton7MouseClicked(evt);
+                ringTestButtonMouseClicked(evt);
             }
         });
 
-        jTextField2.setText("3/3");
+        infoRingTest.setText("3/3");
 
-        jLabel5.setText("Nº of RingActors/Nº of laps");
+        jLabel5.setText("Nº  RingActors/Number of Laps");
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+                new Object [][] {
+                        {null, null},
+                },
+                new String [] {
+                        "Name Actor", "Messages Sent"
+                }
+        ));
+        jScrollPane2.setViewportView(jTable2);
+
+        suscribeButton.setText("Subscribe");
+        suscribeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        suscribeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                suscribeButtonMouseClicked(evt);
+            }
+        });
+
+        unsubscribeButton.setText("Unsubscribe");
+        unsubscribeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        unsubscribeButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                unsubscribeButtonMouseClicked(evt);
+            }
+        });
+
+        subscribeAllButton.setText("Subscribe All");
+        subscribeAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        subscribeAllButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                suscribeAllButtonMouseClicked(evt);
+            }
+        });
+
+        infoButton.setText("Info");
+        infoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        infoButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                infoButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(28, 28, 28)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jButton4)
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(backFrom3Button)
                                                 .addGap(30, 30, 30))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                                .addComponent(jButton6)
-                                                                .addGap(29, 29, 29))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                                .addComponent(jLabel4)
-                                                                .addGap(27, 27, 27)))
-                                                .addGap(74, 74, 74))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jButton7)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGap(18, 20, Short.MAX_VALUE)
+                                                .addComponent(ringTestButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addComponent(jLabel5)
                                                         .addGroup(jPanel3Layout.createSequentialGroup()
-                                                                .addGap(26, 26, 26)
-                                                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(53, 53, 53))))
+                                                                .addGap(42, 42, 42)
+                                                                .addComponent(infoRingTest, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(53, 53, 53))
+                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                .addGap(24, 24, 24)
+                                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                                .addComponent(jLabel4)
+                                                                                .addGap(27, 27, 27))
+                                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                        .addComponent(subscribeAllButton)
+                                                                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                .addComponent(suscribeButton)
+                                                                                                .addComponent(unsubscribeButton)))
+                                                                                .addGap(18, 18, 18)
+                                                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                                .addComponent(infoMessage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                                .addComponent(selectMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                                                                                .addComponent(sendButton)
+                                                                                                .addGap(29, 29, 29))))))
+                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                .addGap(115, 115, 115)
+                                                                .addComponent(infoButton)))
+                                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel3Layout.setVerticalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addContainerGap(18, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                                                .addComponent(infoButton)
+                                                .addGap(52, 52, 52)
                                                 .addComponent(jLabel4)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(infoMessage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(suscribeButton))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jButton6)
-                                                .addGap(44, 44, 44)
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(selectMessage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(unsubscribeButton))
+                                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(sendButton))
+                                                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                                                .addGap(33, 33, 33)
+                                                                .addComponent(subscribeAllButton)))
+                                                .addGap(29, 29, 29)
                                                 .addComponent(jLabel5)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(jButton7)
-                                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(ringTestButton)
+                                                        .addComponent(infoRingTest, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(52, 52, 52)
-                                                .addComponent(jButton4))
-                                        .addComponent(jScrollPane2))
+                                                .addComponent(backFrom3Button)))
                                 .addGap(54, 54, 54))
+        );
+
+        BackButton4.setText("Back");
+        BackButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BackButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BackButton4MouseClicked(evt);
+            }
+        });
+
+        GetTrafficButton.setText("Get Traffic");
+        GetTrafficButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        GetTrafficButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GetTrafficButtonMouseClicked(evt);
+            }
+        });
+
+        GetEventsButton.setText("Get Events");
+        GetEventsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        GetEventsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GetEventsButtonMouseClicked(evt);
+            }
+        });
+
+
+        GetSentMsgButton.setText("Get Sent Msg");
+        GetSentMsgButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        GetSentMsgButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GetSentMsgButtonMouseClicked(evt);
+            }
+        });
+
+        GetReceivedMsgButton.setText("Get Received Msg");
+        GetReceivedMsgButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        GetReceivedMsgButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GetReceivedMsgButtonMouseClicked(evt);
+            }
+        });
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(BackButton4))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                                                .addGap(32, 32, 32)
+                                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jScrollPane1)
+                                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                                                .addComponent(GetTrafficButton)
+                                                                .addGap(70, 70, 70)
+                                                                .addComponent(GetEventsButton)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                                                                .addComponent(GetSentMsgButton)
+                                                                .addGap(58, 58, 58)
+                                                                .addComponent(GetReceivedMsgButton)))))
+                                .addGap(27, 27, 27))
+        );
+        jPanel4Layout.setVerticalGroup(
+                jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(GetTrafficButton)
+                                        .addComponent(GetEventsButton)
+                                        .addComponent(GetSentMsgButton)
+                                        .addComponent(GetReceivedMsgButton))
+                                .addGap(30, 30, 30)
+                                .addComponent(BackButton4)
+                                .addGap(55, 55, 55))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -326,6 +473,8 @@ public class Ventana extends javax.swing.JFrame {
                                         .addContainerGap()))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,93 +485,156 @@ public class Ventana extends javax.swing.JFrame {
                                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    private void GetReceivedMsgButtonMouseClicked(java.awt.event.MouseEvent evt) {
+        Map<String, List<MessageInterface>> traffic = Controlador.getInstance().getReceivedMsg();
+        jTextArea1.selectAll();
+        jTextArea1.replaceSelection("");
+        for(String name: traffic.keySet()){
+            String value = traffic.get(name).toString();
+            jTextArea1.append("key: "+name+" --->: "+value+"\n");
+        }
     }
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
+    private void GetSentMsgButtonMouseClicked(java.awt.event.MouseEvent evt) {
+        Map<String, List<MessageInterface>> traffic = Controlador.getInstance().getSentMsg();
+        jTextArea1.selectAll();
+        jTextArea1.replaceSelection("");
+        for(String name: traffic.keySet()){
+            String value = traffic.get(name).toString();
+            jTextArea1.append("key: "+name+" --->: "+value+"\n");
+        }
     }
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {
+    private void GetEventsButtonMouseClicked(java.awt.event.MouseEvent evt) {
+        Map<Events, Integer> traffic = Controlador.getInstance().getEvents();
+        jTextArea1.selectAll();
+        jTextArea1.replaceSelection("");
+        String key = "";
+        String value = "";
+        for(Events name: traffic.keySet()){
+            if(name.equals(Events.MESSAGE)){
+                value = Integer.toString(traffic.get(name)-traffic.get(Events.STOPPED));
+            }else {
+                value = Integer.toString(traffic.get(name));
+            }
+            key = name.toString();
+            jTextArea1.append("key: "+key+" --->: "+value+"\n");
+        }
+    }
+
+    private void GetTrafficButtonMouseClicked(java.awt.event.MouseEvent evt) {
+        Map<String, List<String>> traffic = Controlador.getInstance().getTraffic();
+        jTextArea1.selectAll();
+        jTextArea1.replaceSelection("");
+        for(String name: traffic.keySet()){
+            String value = traffic.get(name).toString();
+            jTextArea1.append("key: "+name+" -->: "+value+"\n");
+        }
+
+    }
+
+    private void BackButton4MouseClicked(java.awt.event.MouseEvent evt) {
+        jPanel2.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel3.setVisible(true);
+        jPanel4.setVisible(false);
+
+    }
+
+
+    private void goToCreateButtonMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
 
 
         jPanel2.setVisible(true);
         jPanel1.setVisible(false);
         jPanel3.setVisible(false);
+        jPanel4.setVisible(false);
 
 
     }
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {
+    private void goToListButtonMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
 
         jPanel2.setVisible(false);
         jPanel1.setVisible(false);
         jPanel3.setVisible(true);
+        jPanel4.setVisible(false);
 
 
     }
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {
+    private void backFrom2ButtonMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
 
+        //System.out.println("entro");
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         jPanel3.setVisible(false);
+        jPanel4.setVisible(false);
 
     }
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {
-        // TODO add your handling code here:
-    }
-
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {
+    private void backFrom3ButtonMouseClicked(java.awt.event.MouseEvent evt) {
         jPanel2.setVisible(false);
         jPanel1.setVisible(true);
         jPanel3.setVisible(false);
+        jPanel4.setVisible(false);
+
     }
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {
+    private void selectActorActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
-    private void jActorCreate(java.awt.event.MouseEvent evt) {
+    private void createActorButtonMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-        c.createActor((String)jComboBox1.getSelectedItem(),(String)jComboBox2.getSelectedItem());
-        jList2.removeAll();
-        String[] list = c.getAllActors();
-        jList2.setListData(list);
+        System.out.println(selectActor.getSelectedItem()+" "+selectDecorator.getSelectedItem() );
+
+        String name = Controlador.getInstance().createActor((String)selectActor.getSelectedItem(),(String)selectDecorator.getSelectedItem());
+        DefaultTableModel table = ((DefaultTableModel) jTable2.getModel());
+        table.addRow(new Object[]{name,0});
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AQUI Creo el ACTOR Con PROXY Y LO PONGO EN ACTORCONTEXT
     }
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {
+
+    private void infoButtonMouseClicked(java.awt.event.MouseEvent evt) {
+        jPanel2.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel3.setVisible(false);
+        jTextArea1.selectAll();
+        jTextArea1.replaceSelection("");
+        jPanel4.setVisible(true);
+    }
+
+    private void suscribeButtonMouseClicked(java.awt.event.MouseEvent evt) {
+        Controlador.getInstance().subscribe((String) jTable2.getModel().getValueAt(jTable2.getSelectedRow(),0));
+    }
+
+    private void unsubscribeButtonMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
+        Controlador.getInstance().unSubscribe((String) jTable2.getModel().getValueAt(jTable2.getSelectedRow(),0));
     }
 
-    private void jButton7MouseClicked(java.awt.event.MouseEvent evt) {
-        c.ringTest(jTextField2.getText());
-        try {
-            Thread.sleep(200);
-            jList2.removeAll();
-            String[] list = c.getAllActors();
-            jList2.setListData(list);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+
+    private void ringTestButtonMouseClicked(java.awt.event.MouseEvent evt) {
+       Controlador.getInstance().ringTest(infoRingTest.getText());
     }
 
-    private void jSendMessage(java.awt.event.MouseEvent evt) {
-        c.sendMessage((String) jList2.getModel().getElementAt(jList2.getSelectedIndex()),(String)jComboBox3.getSelectedItem(),jTextField1.getText());
-        jList2.removeAll();
-        String[] list = c.getAllActors();
-        jList2.setListData(list);
+    private void sendButtonMouseClicked(java.awt.event.MouseEvent evt) {
+       Controlador.getInstance().sendMessage((String) jTable2.getModel().getValueAt(jTable2.getSelectedRow(),0),(String)selectMessage.getSelectedItem(),infoMessage.getText());
+    }
 
+    private void suscribeAllButtonMouseClicked(java.awt.event.MouseEvent evt) {
+        Controlador.getInstance().subscribeAll();
     }
 
     /**
@@ -434,7 +646,7 @@ public class Ventana extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
-        Controlador c2 = new Controlador();
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -454,40 +666,49 @@ public class Ventana extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        runFunction();
-
-    }
-    private static void runFunction(){
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Ventana().setVisible(true);
             }
         });
     }
+
     // Variables declaration - do not modify
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton BackButton4;
+    private javax.swing.JButton GetEventsButton;
+    private javax.swing.JButton GetReceivedMsgButton;
+    private javax.swing.JButton GetSentMsgButton;
+    private javax.swing.JButton GetTrafficButton;
+    private javax.swing.JButton backFrom2Button;
+    private javax.swing.JButton backFrom3Button;
+    private javax.swing.JButton createActorButton;
+    private javax.swing.JButton goToCreateButton;
+    private javax.swing.JButton goToListButton;
+    private javax.swing.JButton infoButton;
+    private javax.swing.JTextField infoMessage;
+    private javax.swing.JTextField infoRingTest;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JList<String> jList2;
+    private javax.swing.JTable jTable2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JButton ringTestButton;
+    private javax.swing.JComboBox<String> selectActor;
+    private javax.swing.JComboBox<String> selectDecorator;
+    private javax.swing.JComboBox<String> selectMessage;
+    private javax.swing.JButton sendButton;
+    private javax.swing.JButton subscribeAllButton;
+    private javax.swing.JButton suscribeButton;
+    private javax.swing.JButton unsubscribeButton;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane1;
+
     // End of variables declaration
 }
-
 

@@ -1,15 +1,17 @@
 package proxy;
 
-import dynamic.*;
 import helloWorld.*;
 import actor.*;
+import monitor.Events;
+import monitor.KillListenerMessage;
+import monitor.Notify;
+import monitor.Observer;
 import validation.PingPongMessage;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.stream.Collectors;
 
-public class InsultActor implements ActorInterface {
+public class InsultActor extends Notify implements ActorInterface {
 
     private String name;
     private LinkedList<MessageInterface> insultQueue;
@@ -17,9 +19,20 @@ public class InsultActor implements ActorInterface {
 
     public InsultActor() {
         String insults []= {"airhead","arsehole","ass-kisser","bastard","bimbo","bugger","chicken","dag","deadbeat","dickhead","donkey","dork","dweeb","flake","floozy","freak","fruitcake","git"};
+        notifyChange(Events.CREATED);
         insultQueue = new LinkedList<MessageInterface>();
         msgQueue = new LinkedBlockingQueue<MessageInterface>();
 
+        for(String s:insults){
+            insultQueue.add(new Message(null, s));
+        }
+    }
+    public InsultActor(String name) {
+        String insults []= {"airhead","arsehole","ass-kisser","bastard","bimbo","bugger","chicken","dag","deadbeat","dickhead","donkey","dork","dweeb","flake","floozy","freak","fruitcake","git"};
+        notifyChange(Events.CREATED);
+        insultQueue = new LinkedList<MessageInterface>();
+        msgQueue = new LinkedBlockingQueue<MessageInterface>();
+        this.name=name;
         for(String s:insults){
             insultQueue.add(new Message(null, s));
         }
@@ -28,6 +41,7 @@ public class InsultActor implements ActorInterface {
     @Override
     public void send(MessageInterface msg) {
         msgQueue.add(msg);
+        notifyChange(Events.MESSAGE,new Message(msg.getActor(), msg.getMsg()));
         //ActorInterface aux = msg.getActor();    // take the recipient actor of the msg
         //aux.getMsgQueue().add(msg);             // Send the msg to this Actor
     }
@@ -73,7 +87,10 @@ public class InsultActor implements ActorInterface {
         }
         else if(msg instanceof GetInsultMessage) {
             Random rand = new Random();
+            System.out.println("Queue de "+msg.getActor());
             msg.getActor().getQueue().add(this.insultQueue.get(rand.nextInt(insultQueue.size())));
+        }else if(msg instanceof KillListenerMessage){
+            aList.remove(name);
         }
         else if(msg instanceof GetAllInsultsMessage){
             // Option 1
@@ -98,9 +115,14 @@ public class InsultActor implements ActorInterface {
         } else {
             //System.out.println(msg.getMsg());
         }
+        System.out.println("Mensaje: "+msg.getMsg());
 
     }
 
+    @Override
+    public void addListener(Observer listener) {
+        this.aList.put(name,listener);
+    }
 
 
     @Override
@@ -110,8 +132,12 @@ public class InsultActor implements ActorInterface {
                 MessageInterface msg = msgQueue.take();
                 process(msg);
             }
-        }catch (InternalError | InterruptedException e){
-            //System.out.println("I died");
+        }catch (InternalError e) {
+            notifyChange(Events.STOPPED);
+            //System.out.println("I died well");
+        }catch (InterruptedException e){
+            notifyChange(Events.ERROR);
+            //System.out.println("I died wrong");
         }
         ActorContext.getInstance().getRegistry().remove(name);
     }

@@ -1,46 +1,36 @@
 package helloWorld;
 
-import java.awt.event.ActionListener;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.LinkedBlockingQueue;
 import actor.*;
 //import monitor.ActorListener;
+import monitor.*;
 import validation.*;
 
 
-public class RingActor implements ActorInterface {
+public class RingActor extends Notify implements ActorInterface {
 
     private String name;
     private LinkedBlockingQueue<MessageInterface> msgQueue;
-   // private ActorListener listener;
     private ActorInterface next;
 
 
     public RingActor(){
-       // listener = null;
-       // notifyChange("c");
+        notifyChange(Events.CREATED);
         this.next = null;
         this.msgQueue = new LinkedBlockingQueue<MessageInterface>();
     }
     public RingActor(String name){
-        // listener = null;
-        // notifyChange("c");
+        notifyChange(Events.CREATED);
         this.name = name;
         this.next = null;
         this.msgQueue = new LinkedBlockingQueue<MessageInterface>();
     }
 
- /*   public RingActor(ActorListener aL){
-        this.listener = aL;
-        notifyChange("c");
-        this.next = null;
-        this.msgQueue = new LinkedBlockingQueue<MessageInterface>();
-    }*/
 
     public void send(MessageInterface msg){
-        //notifyChange("r");
+        notifyChange(Events.MESSAGE,msg);
         msgQueue.add(msg);
     }
 
@@ -59,6 +49,8 @@ public class RingActor implements ActorInterface {
         }
         else if(msg instanceof RingMessage){
             this.next=msg.getActor();
+        }else if(msg instanceof KillListenerMessage){
+            aList.remove(name);
         }
         else if(msg instanceof LoopMessage){
             LoopMessage msgLoop = (LoopMessage) msg;
@@ -79,6 +71,12 @@ public class RingActor implements ActorInterface {
         System.out.println("Mensaje: "+msg.getMsg());
     }
 
+    @Override
+    public void addListener(Observer listener) {
+        this.aList.put(name,listener);
+        ((ActorListener)listener).setNumMessages(msgQueue.size());
+    }
+
 
     @Override
     public void run() {
@@ -89,10 +87,10 @@ public class RingActor implements ActorInterface {
                 //System.out.println("I have processed");
             }
         }catch (InternalError e) {
-            //notifyChange("d");
+            notifyChange(Events.STOPPED);
             //System.out.println("I died well");
         }catch (InterruptedException e){
-            //notifyChange("f");
+            notifyChange(Events.ERROR);
             //System.out.println("I died wrong");
         }
         ActorContext.getInstance().getRegistry().remove(name);
@@ -124,15 +122,8 @@ public class RingActor implements ActorInterface {
         return name;
     }
 
-    /*   public void notifyChange(String s){
-           if(listener!=null) {
-               //listener.noty(s);
-               if (s == "r") {
-                   // sends message received
-               }
-           }
-       }
-   */
+
+
     public String toString(){
 
         return name;

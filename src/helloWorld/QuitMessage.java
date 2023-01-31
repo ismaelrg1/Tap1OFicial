@@ -18,4 +18,8 @@ public class QuitMessage implements MessageInterface {
     public ActorInterface getActor() {
         return actor;
     }
+
+    public String toString(){
+        return "QuitMessage";
+    }
 }

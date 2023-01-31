@@ -2,14 +2,16 @@
 import dynamic.*;
 import helloWorld.*;
 import actor.*;
+import monitor.Events;
+import monitor.MonitorService;
 import proxy.*;
 import decorator.*;
 
 import java.awt.event.MouseWheelEvent;
 import java.lang.reflect.Proxy;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.function.Predicate;
-import java.util.NoSuchElementException;
+import java.util.stream.IntStream;
 
 
 import org.junit.runner.JUnitCore;
@@ -22,10 +24,9 @@ import validation.*;
  */
 public class App {
     public static void main(String[] args) throws Exception {
-/*
 
-                    */
-/*HelloWorld Actor*//*
+                            //HelloWorld Actor
+/*
 
 
         ActorProxy hello = ActorContext.spawnActor("hello",new RingActor());
@@ -45,8 +46,7 @@ public class App {
         System.out.println(ActorContext.getInstance().getNames());
 
     //////////////////////////////////////////////////////////////////////////////
-                    */
-/* InsultActor with Actor Proxy *//*
+        //   InsultActor with Actor Proxy
 
 
 
@@ -72,10 +72,11 @@ public class App {
         MessageInterface r2 = insult.receive();
         System.out.println("Final Insults "+r2.getMsg());
 
-*/
 
     //////////////////////////////////////////////////////////////
-                /* Encrypt/Decrypt Decorator Pattern */
+                */
+/* Encrypt/Decrypt Decorator Pattern *//*
+
 
         ActorProxy pepe = ActorContext.spawnActor("pepe",new EncryptionDecorator(new RingActor()));
         ActorProxy manoli = ActorContext.spawnActor("manoli",new EncryptionDecorator(new RingActor()));
@@ -117,9 +118,9 @@ public class App {
 
 
     /////////////////////////////////////////////////////////////////////////////////////////
-                    //Pipeling Decorators*
+                    //Pipelining Decorators*
         Thread.sleep(2000);
-        System.out.println("\n\n\nPipeling");
+        System.out.println("\n\n\nPipelining");
         ActorProxy pipelin = ActorContext.spawnActor("pipe",new FireWallDecorator(new LambdaFirewallDecorator(new EncryptionDecorator(new RingActor()))));
         ActorProxy pipelin2 = ActorContext.spawnActor("pipe2",new EncryptionDecorator(new LambdaFirewallDecorator(new FireWallDecorator(new RingActor()))));
 
@@ -144,7 +145,6 @@ public class App {
 
 
     ////////////////////////////////////////////////////////////////
-/*
                     //Dynamic Proxy Pattern
 
 
@@ -158,13 +158,79 @@ public class App {
         System.out.println("All Insults: "+ins.getAllInsults());
         ins.addInsult("sneeze");
         System.out.println("All Insults (+1): "+ins.getAllInsults());
+*/
 
     ////////////////////////////////////////////////////////////////////////////////////////
-        //mS.subscribe("pepe");
+        MonitorService monitor = new MonitorService();
+
+        ActorProxy2 actor1 = ActorContext.spawnActor2("Actor1",new RingActor("Actor1"));
+        ActorProxy2 actor2 = ActorContext.spawnActor2("Actor2", new EncryptionDecorator(new RingActor("Actor2")));
+        ActorProxy2 actor3 = ActorContext.spawnActor2("actor3", new InsultActor("actor3"));
+        ActorProxy2 actor4 = ActorContext.spawnActor2("actor4",new InsultActor("actor4"));
+
+        System.out.println("\n\nSubscribimos al actor 1, 2 y 3\n");
+        monitor.subscribe(actor1.getName());
+        monitor.subscribe(actor2.getName());
+        monitor.subscribe(actor3.getName());
+
+        System.out.println("Enviamos 4 mensajes al Actor1 from:Actor2");
+        IntStream.range(0,4).forEach(i ->actor1.send(new Message(actor2,"Soy Actor2")) );
+        System.out.println("Enviamos 7 mensajes al Actor2 from:Actor1");
+        IntStream.range(0,7).forEach(i ->actor2.send(new Message(actor1,"Soy Actor1")) );
+        System.out.println("Enviamos 16 mensajes al Actor3 from:Actor4");
+        IntStream.range(0,16).forEach(i ->actor3.send(new Message(actor4,"Soy Actor4")) );
+        System.out.println("Enviamos 2 mensajes al Actor4 from:Actor1");
+        IntStream.range(0,2).forEach(i ->actor4.send(new Message(actor1,"Soy Actor4")) );
+
+        Thread.sleep(2000);
+
+
+        System.out.println("\nGET TRAFFIC");
+        Map<String, List<String>> getTraffic = monitor.getTraffic();
+        getTraffic.entrySet().forEach(System.out::println);
+
+        System.out.println("\nGET Events");
+        Map<Events, Integer> getEvents = monitor.getEvents();
+        getEvents.entrySet().forEach(System.out::println);
+
+        System.out.println("\nGET SENT MESSAGES");
+        Map<String, List<MessageInterface>> getSentMessage = monitor.getSentMessages();
+        getSentMessage.entrySet().forEach(System.out::println);
+
+        System.out.println("\nGET RECEIVED MESSAGES");
+        Map<String, List<MessageInterface>> getReceivedMessage = monitor.getReceivedMessages();
+        getReceivedMessage.entrySet().forEach(System.out::println);
+
+
+        System.out.println("\n\nMATAMOS AL ACTOR1 from Actor2\n");
+        actor1.send(new QuitMessage(actor2));
+
+        Thread.sleep(2000);
+
+        System.out.println("\nGET TRAFFIC");
+        getTraffic = monitor.getTraffic();
+        getTraffic.entrySet().forEach(System.out::println);
+
+        System.out.println("\nGET Events");
+        getEvents = monitor.getEvents();
+        getEvents.entrySet().forEach(System.out::println);
+
+        System.out.println("\nGET SENT MESSAGES");
+        getSentMessage = monitor.getSentMessages();
+        getSentMessage.entrySet().forEach(System.out::println);
+
+        System.out.println("\nGET RECEIVED MESSAGES");
+        getReceivedMessage = monitor.getReceivedMessages();
+        getReceivedMessage.entrySet().forEach(System.out::println);
+
+
+
+
 
     //////////////////////////////////////////////////////////
                         //Unit Tests
 
+/*
 
         Result res = JUnitCore.runClasses(TestSuite.class);
         for (Failure failure : res.getFailures()) {

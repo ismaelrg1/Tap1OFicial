@@ -1,5 +1,7 @@
 package actor;
 
+import monitor.Observer;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -36,7 +38,9 @@ public interface ActorInterface extends Runnable {
 
     public void process(MessageInterface msg);
 
+    public void addListener(Observer listener);
 
+    public String toString();
 
 
 

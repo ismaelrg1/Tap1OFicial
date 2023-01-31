@@ -1,6 +1,7 @@
 package proxy;
 
 import actor.*;
+import monitor.Observer;
 
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
@@ -35,7 +36,7 @@ public class ActorProxy2 implements ActorInterface {
     }
 
     @Override
-    public void run() {}
+    public void run() {actor.run();}
 
     /**
      *
@@ -67,6 +68,19 @@ public class ActorProxy2 implements ActorInterface {
     @Override
     public void process(MessageInterface msg) {
         actor.process(msg);
+    }
+
+    @Override
+    public void addListener(Observer listener) {
+        actor.addListener(listener);
+    }
+
+    public ActorInterface getActor(){
+        return this.actor;
+    }
+
+    public String toString(){
+        return actor.toString();
     }
 
 }
